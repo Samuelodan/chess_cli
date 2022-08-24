@@ -2,6 +2,8 @@
 
 # smart chess squares
 class Square
+  attr_accessor :position, :piece, :color
+
   def initialize(pos:)
     @position = pos
     @piece = nil
