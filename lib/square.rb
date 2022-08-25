@@ -4,8 +4,8 @@
 class Square
   attr_accessor :position, :piece, :color
 
-  def initialize(pos:)
-    @position = pos
+  def initialize
+    @position = nil
     @piece = nil
     @color = nil
   end
