@@ -7,7 +7,7 @@ class Board
   attr_accessor :squares
 
   def initialize
-    @squares = nil
+    @squares = build_board
   end
 
   def create_squares
@@ -40,6 +40,12 @@ class Board
         pos_idx += 1
       end
     end
+  end
+
+  def build_board
+    sqs = create_squares
+    assign_square_positions(sqs: sqs)
+    sqs
   end
 end
 
