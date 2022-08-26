@@ -19,5 +19,15 @@ class Board
     end
     sqs
   end
+
+  def generate_positions
+    res_arr = []
+    8.downto(1).each do |rank|
+      ('a'..'h').each do |file|
+        res_arr << "#{file}#{rank}"
+      end
+    end
+    res_arr
+  end
 end
 
