@@ -29,5 +29,17 @@ class Board
     end
     res_arr
   end
+
+  def assign_square_positions(sqs:)
+    pos_arr = generate_positions
+
+    pos_idx = 0
+    sqs.each_with_index do |row, row_idx|
+      row.each_with_index do |square, idx|
+        sqs[row_idx][idx].position = pos_arr[pos_idx]
+        pos_idx += 1
+      end
+    end
+  end
 end
 
