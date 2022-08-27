@@ -59,6 +59,7 @@ class Board
   def build_board
     sqs = create_squares
     assign_square_positions(sqs: sqs)
+    assign_square_colors(sqs: sqs)
     sqs
   end
 end
