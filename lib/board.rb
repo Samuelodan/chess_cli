@@ -42,6 +42,20 @@ class Board
     end
   end
 
+  def assign_square_colors(sqs:)
+    sqs.each_with_index do |row, row_idx|
+      row.each_with_index do |sqr, idx|
+        if row_idx.even?
+          sqr.color = :white if idx.even?
+          sqr.color = :black if idx.odd?
+        else
+          sqr.color = :white if idx.odd?
+          sqr.color = :black if idx.even?
+        end
+      end
+    end
+  end
+
   def build_board
     sqs = create_squares
     assign_square_positions(sqs: sqs)
