@@ -62,5 +62,19 @@ class Board
     assign_square_colors(sqs: sqs)
     sqs
   end
+
+
+  def display_board
+    puts '    a  b  c  d  e  f  g  h'
+    squares.each_with_index do |row, row_idx|
+      print " #{row_idx + 1} "
+      row.each_with_index do |item, idx|
+        draw_square(item)
+      end
+      print " #{row_idx + 1} "
+        print "\n"
+    end
+    puts "    a  b  c  d  e  f  g  h"
+  end
 end
 
