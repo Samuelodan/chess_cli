@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require_relative './piece'
 
 # subclass of Piece
 class Knight < Piece

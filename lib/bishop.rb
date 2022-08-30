@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require_relative './piece'
 
 # bishop subclass
 class Bishop > Piece
