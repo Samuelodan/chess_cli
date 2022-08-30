@@ -7,6 +7,15 @@ class Piece
   def initialize(color:, letter:)
     @color = color
     @letter = letter
+    @moved = false
+  end
+
+  def moved?
+    @moved
+  end
+
+  def moved=(bool)
+    @moved = bool
   end
 end
 
