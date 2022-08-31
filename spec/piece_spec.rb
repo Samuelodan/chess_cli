@@ -74,6 +74,15 @@ RSpec.describe Piece do
           expect(is_black_rook).to be(true)
         end
       end
+
+      context "when letter is uppercase 'R'" do
+        it 'returns a white rook object' do
+          res_piece = Piece.for('R')
+          is_white = res_piece.color == :white
+          is_white_rook = res_piece.is_a?(Rook) && is_white
+          expect(is_white_rook).to be(true)
+        end
+      end
     end
   end
 end
