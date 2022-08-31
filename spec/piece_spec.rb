@@ -66,7 +66,7 @@ RSpec.describe Piece do
 
   describe 'Piece.for(letter:)' do
     context 'for rook' do
-      context "when letter is lowercase 'n'" do
+      context "when letter is lowercase 'r'" do
         it 'returns a black rook object' do
           res_piece = Piece.for('r')
           is_black = res_piece.color == :black
