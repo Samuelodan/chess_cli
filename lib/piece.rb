@@ -21,5 +21,23 @@ class Piece
   def moved=(bool)
     @moved = bool
   end
+
+  def self.for(letter)
+    registry.find do |candidate|
+      candidate.handles?(letter.downcase)
+    end.new(letter: letter)
+  end
+
+  def self.registry
+    @registry ||= []
+  end
+
+  def self.register(candidate)
+    registry << candidate
+  end
+
+  def self.inherited(candidate)
+    register(candidate)
+  end
 end
 
