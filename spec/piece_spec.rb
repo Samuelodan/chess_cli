@@ -40,6 +40,22 @@ RSpec.describe Piece do
         expect(result).to_not eq(:white)
       end
     end
+
+    context 'when letter is uppercase' do
+      before do
+        piece.letter = 'N'
+      end
+
+      it 'returns :white' do
+        result = piece.determine_color
+        expect(result).to eq(:white)
+      end
+
+      it 'does not return :black' do
+        result = piece.determine_color
+        expect(result).to_not eq(:black)
+      end
+    end
   end
 end
 
