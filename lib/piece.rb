@@ -5,14 +5,13 @@ class Piece
   attr_accessor :color, :letter
 
   def initialize(letter:)
-    @color = determine_color
     @letter = letter
+    @color = determine_color
     @moved = false
   end
 
   def determine_color
-    str_letter = letter.to_s
-    clr = str_letter == str_letter.downcase ? :black : :white
+    clr = letter == letter.downcase ? :black : :white
   end
 
   def moved?
