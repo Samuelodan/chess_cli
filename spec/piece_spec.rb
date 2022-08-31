@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 require_relative '../lib/piece'
+require_relative '../lib/rook'
+require_relative '../lib/knight'
+require_relative '../lib/bishop.rb'
+require_relative '../lib/queen.rb'
+require_relative '../lib/king'
+require_relative '../lib/pawn.rb'
 
 RSpec.describe Piece do
   subject(:piece) { described_class.new(letter: 'N') }
@@ -54,6 +60,19 @@ RSpec.describe Piece do
       it 'does not return :black' do
         result = piece.determine_color
         expect(result).to_not eq(:black)
+      end
+    end
+  end
+
+  describe 'Piece.for(letter:)' do
+    context 'for rook' do
+      context "when letter is lowercase 'n'" do
+        it 'returns a black rook object' do
+          res_piece = Piece.for('r')
+          is_black = res_piece.color == :black
+          is_black_rook = res_piece.is_a?(Rook) && is_black
+          expect(is_black_rook).to be(true)
+        end
       end
     end
   end
