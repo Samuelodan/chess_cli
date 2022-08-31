@@ -6,5 +6,9 @@ class Rook < Piece
   def symbol
     sym = color == :white ? "\u2656" : "\u265c"
   end
+
+  def self.handles?(letter)
+    letter == 'r'
+  end
 end
 
