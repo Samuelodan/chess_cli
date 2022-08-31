@@ -3,7 +3,7 @@
 require_relative '../lib/piece'
 
 RSpec.describe Piece do
-  subject(:piece) { described_class.new(color: 'white', letter: 'N') }
+  subject(:piece) { described_class.new(letter: 'N') }
 
   describe '#moved?' do
     context 'when piece has not moved' do
