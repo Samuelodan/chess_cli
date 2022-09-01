@@ -83,5 +83,17 @@ class Board
     end
     puts "    a  b  c  d  e  f  g  h"
   end
+
+  def arrange_black_pieces
+    squares[1].each do |sqr|
+      sqr.piece = Piece.for('p')
+    end
+    pc_letters = %w[r n b q k b n r]
+    pc_idx = 0
+    squares[0].each do |sqr|
+      sqr.piece = Piece.for(pc_letters[pc_idx])
+      pc_idx += 1
+    end
+  end
 end
 
