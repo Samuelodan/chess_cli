@@ -84,6 +84,11 @@ class Board
     puts "    a  b  c  d  e  f  g  h"
   end
 
+  def arrange_pieces
+    arrange_black_pieces
+    arrange_white_pieces
+  end
+
   def arrange_black_pieces
     squares[1].each do |sqr|
       sqr.piece = Piece.for('p')
