@@ -96,7 +96,7 @@ RSpec.describe Piece do
       end
 
       context "when letter is uppercase 'N'" do
-        it 'returns a white rook object' do
+        it 'returns a white knight object' do
           res_piece = Piece.for('N')
           is_white = res_piece.color == :white
           is_white_rook = res_piece.is_a?(Knight) && is_white
@@ -115,7 +115,7 @@ RSpec.describe Piece do
         end
       end
       context "when letter is uppercase 'B'" do
-        it 'returns a white knight object' do
+        it 'returns a white bishop object' do
           res_piece = Piece.for('B')
           is_white = res_piece.color == :white
           is_white_knight = res_piece.is_a?(Bishop) && is_white
