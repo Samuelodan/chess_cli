@@ -2,7 +2,7 @@
 
 # Piece superclass
 class Piece
-  attr_accessor :color, :letter
+  attr_reader :color, :letter
 
   def initialize(letter:)
     @letter = letter
