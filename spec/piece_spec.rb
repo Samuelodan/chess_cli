@@ -123,6 +123,17 @@ RSpec.describe Piece do
         end
       end
     end
+
+    context 'for queen' do
+      context "when letter is lowercase 'q'" do
+        it 'returns a black queen object' do
+          res_piece = Piece.for('q')
+          is_black = res_piece.color == :black
+          is_black_queen = res_piece.is_a?(Queen) && is_black
+          expect(is_black_queen).to be(true)
+        end
+      end
+    end
   end
 end
 
