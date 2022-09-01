@@ -95,5 +95,17 @@ class Board
       pc_idx += 1
     end
   end
+
+  def arrange_white_pieces
+    squares[6].each do |sqr|
+      sqr.piece = Piece.for('P')
+    end
+    pc_letters = %w[R N B Q K B N R]
+    pc_idx = 0
+    squares[7].each do |sqr|
+      sqr.piece = Piece.for(pc_letters[pc_idx])
+      pc_idx += 1
+    end
+  end
 end
 
