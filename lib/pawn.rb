@@ -6,5 +6,9 @@ class Pawn < Piece
   def symbol
     sym = color == :white ? "\u2659" : "\u265f"
   end
+
+  def self.handles?(letter)
+    letter == 'p'
+  end
 end
 
