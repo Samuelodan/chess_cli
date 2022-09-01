@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 require_relative './square.rb'
+require_relative './piece.rb'
+require_relative '../lib/rook'
+require_relative '../lib/knight'
+require_relative '../lib/bishop.rb'
+require_relative '../lib/queen.rb'
+require_relative '../lib/king'
+require_relative '../lib/pawn.rb'
 
 # board for the chess game
 class Board
@@ -69,7 +76,7 @@ class Board
     squares.each_with_index do |row, row_idx|
       print " #{row_idx + 1} "
       row.each_with_index do |item, idx|
-        draw_square(item)
+        item.draw_square
       end
       print " #{row_idx + 1} "
         print "\n"
