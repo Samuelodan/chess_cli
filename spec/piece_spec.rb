@@ -162,6 +162,17 @@ RSpec.describe Piece do
         end
       end
     end
+
+    context 'for pawn' do
+      context "when letter is lowercase 'p'" do
+        it 'returns a black pawn object' do
+          res_piece = Piece.for('p')
+          is_black = res_piece.color == :black
+          is_black_pawn = res_piece.is_a?(Pawn) && is_black
+          expect(is_black_pawn).to be(true)
+        end
+      end
+    end
   end
 end
 
