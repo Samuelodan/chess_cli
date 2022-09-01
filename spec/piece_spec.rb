@@ -152,6 +152,15 @@ RSpec.describe Piece do
           expect(is_black_king).to be(true)
         end
       end
+
+      context "when letter is uppercase 'K'" do
+        it 'returns a white king object' do
+          res_piece = Piece.for('K')
+          is_white = res_piece.color == :white
+          is_white_king = res_piece.is_a?(King) && is_white
+          expect(is_white_king).to be(true)
+        end
+      end
     end
   end
 end
