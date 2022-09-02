@@ -33,32 +33,32 @@ RSpec.describe Piece do
   describe '#determine_color' do
     context 'when letter is lowercase' do
       before do
-        piece.letter = 'n'
+        @this_piece = Piece.new(letter: 'n')
       end
 
       it 'returns :black' do
-        result = piece.determine_color
+        result = @this_piece.determine_color
         expect(result).to eq(:black)
       end
 
       it 'does not return :white' do
-        result = piece.determine_color
+        result = @this_piece.determine_color
         expect(result).to_not eq(:white)
       end
     end
 
     context 'when letter is uppercase' do
       before do
-        piece.letter = 'N'
+        @this_piece = Piece.new(letter: 'N')
       end
 
       it 'returns :white' do
-        result = piece.determine_color
+        result = @this_piece.determine_color
         expect(result).to eq(:white)
       end
 
       it 'does not return :black' do
-        result = piece.determine_color
+        result = @this_piece.determine_color
         expect(result).to_not eq(:black)
       end
     end
