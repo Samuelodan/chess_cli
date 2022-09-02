@@ -11,7 +11,7 @@ class Piece
   end
 
   def determine_color
-    clr = letter == letter.downcase ? :black : :white
+    letter == letter.downcase ? :black : :white
   end
 
   def moved?
