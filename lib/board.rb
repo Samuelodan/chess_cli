@@ -70,6 +70,10 @@ class Board
     sqs
   end
 
+  def clear_board
+    @squares = build_board
+  end
+
 
   def display_board
     puts '    a  b  c  d  e  f  g  h'
