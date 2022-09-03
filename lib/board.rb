@@ -112,5 +112,17 @@ class Board
       pc_idx += 1
     end
   end
+
+  def simplify_fen(full_fen_str)
+    new_str = ''
+    full_fen_str.split(' ').first.each_char do |char|
+      unless char.to_i.zero?
+        char.to_i.times { new_str += '1' }
+      else
+        new_str += char
+      end
+    end
+    new_str
+  end
 end
 
