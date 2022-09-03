@@ -78,11 +78,11 @@ class Board
   def display_board
     puts '    a  b  c  d  e  f  g  h'
     squares.each_with_index do |row, row_idx|
-      print " #{row_idx + 1} "
+      print " #{8 - row_idx} "
       row.each_with_index do |item, idx|
         item.draw_square
       end
-      print " #{row_idx + 1} "
+      print " #{8 - row_idx} "
         print "\n"
     end
     puts "    a  b  c  d  e  f  g  h"
