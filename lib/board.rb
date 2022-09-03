@@ -124,5 +124,16 @@ class Board
     end
     new_str
   end
+
+  def arrange_pieces_from_fen(full_fen_str)
+    fen_array = simplify_fen(full_fen_str).split('/')
+    squares.each_with_index do |row, row_idx|
+      row.each_with_index do |sqr, idx|
+        current_fen_char = fen_array[row_idx][idx]
+        next if current_fen_char == '1'
+        squares[row_idx][idx].piece = Piece.for(current_fen_char)
+      end
+    end
+  end
 end
 
