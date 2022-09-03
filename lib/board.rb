@@ -130,6 +130,7 @@ class Board
   end
 
   def arrange_pieces_from_fen(full_fen_str)
+    clear_board
     fen_array = simplify_fen(full_fen_str).split('/')
     squares.each_with_index do |row, row_idx|
       row.each_with_index do |sqr, idx|
