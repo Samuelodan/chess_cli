@@ -8,6 +8,8 @@ class Piece
     @letter = letter
     @color = determine_color
     @moved = false
+    @position = nil
+    @coordinate = nil
   end
 
   def determine_color
