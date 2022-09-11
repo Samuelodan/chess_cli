@@ -18,7 +18,7 @@ class Knight < Piece
       y = @coordinate[1] + dir[1]
       mv_arr << [x, y]
     end
-    mv_arr
+    validate_coor(mv_arr)
   end
 
   def directions
