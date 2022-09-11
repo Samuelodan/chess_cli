@@ -24,6 +24,10 @@ class Piece
     @moved = bool
   end
 
+  def update_coor(coor)
+    @coordinate = coor
+  end
+
   def self.for(letter)
     registry.find do |candidate|
       candidate.handles?(letter.downcase)
