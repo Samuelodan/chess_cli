@@ -10,4 +10,11 @@ class Knight < Piece
   def self.handles?(letter)
     letter == 'n'
   end
+
+  def directions
+    [
+      [-2, -1], [+2, -1], [-2, +1], [+2, +1],
+      [-1, +2], [-1, -2], [+1, +2], [+1, -2]
+    ]
+  end
 end
