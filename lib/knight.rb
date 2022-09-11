@@ -27,4 +27,11 @@ class Knight < Piece
       [-1, +2], [-1, -2], [+1, +2], [+1, -2]
     ]
   end
+
+  def validate_coor(coor_list)
+    coor_list.select do |coor|
+      coor => [x, y]
+      (0..7) === x && (0..7) === y
+    end
+  end
 end
