@@ -148,5 +148,14 @@ class Board
       end
     end
   end
+
+  def square_at_pos(pos)
+    squares.each do |row|
+      row.each do |square|
+        return square if square.position == pos
+      end
+    end
+    nil
+  end
 end
 
