@@ -140,5 +140,13 @@ class Board
       end
     end
   end
+
+  def square_coord(sqr)
+    squares.each_with_index do |row, row_idx|
+      row.each_with_index do |square, idx|
+        return [row_idx, idx] if sqr == square
+      end
+    end
+  end
 end
 
