@@ -45,4 +45,14 @@ class Knight < Piece
       end
     end
   end
+
+  def valid_move_pos(board:)
+    pos_arr = []
+    coords = valid_moves(board: board)
+    coords.each do |coord|
+      coord => [y, x]
+      pos_arr << board.squares[y][x].position
+    end
+    pos_arr
+  end
 end
