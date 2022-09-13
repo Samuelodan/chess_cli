@@ -12,6 +12,12 @@ RSpec.describe Position do
         pos2 = Position.new(file: 'a', rank: 1)
         expect(pos1).to eq(pos2)
       end
+
+      it 'returns false' do
+        pos1 = Position.new(file: 'h', rank: 1)
+        pos2 = Position.new(file: 'a', rank: 1)
+        expect(pos1).to_not eq(pos2)
+      end
     end
   end
 end
