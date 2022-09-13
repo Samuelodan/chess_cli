@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require_relative './piece'
+require_relative './board'
 
 # subclass of Piece
 class Knight < Piece
@@ -32,6 +33,16 @@ class Knight < Piece
     coor_list.select do |coor|
       coor => [x, y]
       (0..7) === x && (0..7) === y
+    end
+  end
+
+  def valid_moves(board:)
+    moves.reject do |move|
+      move => [y, x]
+      current_sqr = board.squares[y][x]
+      if current_sqr.piece
+        current_sqr.piece.color == color
+      end
     end
   end
 end
