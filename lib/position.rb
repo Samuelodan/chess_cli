@@ -8,5 +8,9 @@ class Position
     @file = file
     @rank = rank
   end
+
+  def ==(other)
+    file == other.file && rank == other.rank
+  end
 end
 
