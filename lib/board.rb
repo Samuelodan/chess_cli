@@ -166,5 +166,17 @@ class Board
     end
     nil
   end
+
+  def place_piece(pos_str)
+    target_pos, dest_pos = pos_str.slice(0, 2), pos_str.slice(2, 2)
+    square = square_at_pos(target_pos)
+    piece = square.piece
+    piece.update_coor(square_coord(square))
+    pc_move_positions = piece.valid_move_pos(board: self)
+    if pc_move_positions.include?(dest_pos)
+      square_at_pos(dest_pos).piece = piece
+      square.piece = nil
+    end
+  end
 end
 
