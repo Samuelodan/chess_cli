@@ -2,6 +2,7 @@
 
 require_relative './square'
 require_relative './piece'
+require_relative './position'
 require_relative './rook'
 require_relative './knight'
 require_relative './bishop'
@@ -31,7 +32,7 @@ class Board
     res_arr = []
     8.downto(1).each do |rank|
       ('a'..'h').each do |file|
-        res_arr << "#{file}#{rank}"
+        res_arr << Position.new(file: file, rank: rank)
       end
     end
     res_arr
