@@ -78,5 +78,16 @@ RSpec.describe Position do
       end
     end
   end
+
+  describe '#left' do
+    context 'when position is c4' do
+      it 'returns b4 position object' do
+        pos = Position.new(file: 'c', rank: 4)
+        expected_pos = Position.new(file: 'b', rank: 4)
+        new_pos = pos.left
+        expect(new_pos).to eql(expected_pos)
+      end
+    end
+  end
 end
 
