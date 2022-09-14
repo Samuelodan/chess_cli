@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require_relative './square.rb'
-require_relative './piece.rb'
-require_relative '../lib/rook'
-require_relative '../lib/knight'
-require_relative '../lib/bishop.rb'
-require_relative '../lib/queen.rb'
-require_relative '../lib/king'
-require_relative '../lib/pawn.rb'
+require_relative './square'
+require_relative './piece'
+require_relative './rook'
+require_relative './knight'
+require_relative './bishop'
+require_relative './queen'
+require_relative './king'
+require_relative './pawn'
 
 # board for the chess game
 class Board
