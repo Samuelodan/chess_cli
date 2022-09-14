@@ -14,6 +14,10 @@ class Position
   end
 
   def up
+    if rank == 8
+      return self
+    end
+
     new_rank = rank.next
     Position.new(file: file, rank: new_rank)
   end
