@@ -43,20 +43,20 @@ RSpec.describe Position do
 
   describe '#down' do
     context 'when position is c4' do
-      xit 'returns c3 position object' do
+      it 'returns c3 position object' do
         pos = Position.new(file: 'c', rank: 4)
         expected_pos = Position.new(file: 'c', rank: 3)
         new_pos = pos.down
-        expect(new_pos).to eq(expected_pos)
+        expect(new_pos).to eql(expected_pos)
       end
     end
 
     context 'when position is b2' do
-      xit 'returns b1 position object' do
+      it 'returns b1 position object' do
         pos = Position.new(file: 'b', rank: 2)
         expected_pos = Position.new(file: 'b', rank: 1)
         new_pos = pos.down
-        expect(new_pos).to eq(expected_pos)
+        expect(new_pos).to eql(expected_pos)
       end
     end
   end
