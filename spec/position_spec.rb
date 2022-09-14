@@ -97,6 +97,15 @@ RSpec.describe Position do
         expect(new_pos).to eql(expected_pos)
       end
     end
+
+    context 'when position is lowest file' do
+      it 'returns the same object without decrement' do
+        pos = Position.new(file: 'a', rank: 5)
+        expected_pos = Position.new(file: 'a', rank: 5)
+        new_pos = pos.left
+        expect(new_pos).to eql(expected_pos)
+      end
+    end
   end
 end
 
