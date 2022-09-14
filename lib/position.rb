@@ -23,6 +23,10 @@ class Position
   end
 
   def down
+    if rank == 1
+      return self
+    end
+
     new_rank = rank.pred
     Position.new(file: file, rank: new_rank)
   end
