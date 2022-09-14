@@ -12,5 +12,10 @@ class Position
   def ==(other)
     file == other.file && rank == other.rank
   end
+
+  def up
+    new_rank = rank.next
+    Position.new(file: file, rank: new_rank)
+  end
 end
 
