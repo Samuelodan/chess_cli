@@ -30,5 +30,14 @@ class Position
     new_rank = rank.pred
     Position.new(file: file, rank: new_rank)
   end
+
+  def left
+    if file == 'a'
+      return self
+    end
+
+    new_file = (file.ord - 1).chr
+    Position.new(file: new_file, rank: rank)
+  end
 end
 
