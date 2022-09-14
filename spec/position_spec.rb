@@ -107,5 +107,16 @@ RSpec.describe Position do
       end
     end
   end
+
+  describe '#right' do
+    context 'when position is f5' do
+      it 'returns g5 position object' do
+        pos = Position.new(file: 'f', rank: 5)
+        expected_pos = Position.new(file: 'g', rank: 5)
+        new_pos = pos.right
+        expect(new_pos).to eql(expected_pos)
+      end
+    end
+  end
 end
 
