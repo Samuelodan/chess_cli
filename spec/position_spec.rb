@@ -20,5 +20,16 @@ RSpec.describe Position do
       end
     end
   end
+
+  describe '#up' do
+    context 'when position is c4' do
+      it 'returns c5 position object' do
+        pos = Position.new(file: 'c', rank: 4)
+        expected_pos = Position.new(file: 'c', rank: 5)
+        new_pos = pos.up
+        expect(new_pos).to eq(expected_pos)
+      end
+    end
+  end
 end
 
