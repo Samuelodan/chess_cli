@@ -68,6 +68,15 @@ RSpec.describe Position do
         expect(new_pos).to eql(expected_pos)
       end
     end
+
+    context 'when position is lowest rank' do
+      it 'returns the same object without decrement' do
+        pos = Position.new(file: 'e', rank: 1)
+        expected_pos = Position.new(file: 'e', rank: 1)
+        new_pos = pos.down
+        expect(new_pos).to eql(expected_pos)
+      end
+    end
   end
 end
 
