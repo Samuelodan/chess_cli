@@ -39,5 +39,14 @@ class Position
     new_file = (file.ord - 1).chr
     Position.new(file: new_file, rank: rank)
   end
+
+  def right
+    if file == 'h'
+      return self
+    end
+
+    new_file = file.next
+    Position.new(file: new_file, rank: rank)
+  end
 end
 
