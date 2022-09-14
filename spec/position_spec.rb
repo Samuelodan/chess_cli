@@ -126,6 +126,15 @@ RSpec.describe Position do
         expect(new_pos).to eql(expected_pos)
       end
     end
+
+    context 'when position is highest file' do
+      it 'returns the same object without increment' do
+        pos = Position.new(file: 'h', rank: 7)
+        expected_pos = Position.new(file: 'h', rank: 7)
+        new_pos = pos.right
+        expect(new_pos).to eql(expected_pos)
+      end
+    end
   end
 end
 
