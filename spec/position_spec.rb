@@ -10,13 +10,13 @@ RSpec.describe Position do
       it 'returns true' do
         pos1 = Position.new(file: 'a', rank: 1)
         pos2 = Position.new(file: 'a', rank: 1)
-        expect(pos1).to eq(pos2)
+        expect(pos1).to eql(pos2)
       end
 
       it 'returns false' do
         pos1 = Position.new(file: 'h', rank: 1)
         pos2 = Position.new(file: 'a', rank: 1)
-        expect(pos1).to_not eq(pos2)
+        expect(pos1).to_not eql(pos2)
       end
     end
   end
@@ -27,7 +27,7 @@ RSpec.describe Position do
         pos = Position.new(file: 'c', rank: 4)
         expected_pos = Position.new(file: 'c', rank: 5)
         new_pos = pos.up
-        expect(new_pos).to eq(expected_pos)
+        expect(new_pos).to eql(expected_pos)
       end
     end
 
@@ -36,7 +36,7 @@ RSpec.describe Position do
         pos = Position.new(file: 'b', rank: 1)
         expected_pos = Position.new(file: 'b', rank: 2)
         new_pos = pos.up
-        expect(new_pos).to eq(expected_pos)
+        expect(new_pos).to eql(expected_pos)
       end
     end
   end
