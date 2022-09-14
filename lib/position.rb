@@ -9,7 +9,7 @@ class Position
     @rank = rank
   end
 
-  def ==(other)
+  def eql?(other)
     file == other.file && rank == other.rank
   end
 
