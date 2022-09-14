@@ -17,5 +17,10 @@ class Position
     new_rank = rank.next
     Position.new(file: file, rank: new_rank)
   end
+
+  def down
+    new_rank = rank.pred
+    Position.new(file: file, rank: new_rank)
+  end
 end
 
