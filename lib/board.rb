@@ -167,6 +167,15 @@ class Board
     nil
   end
 
+  def square_at_position(pos)
+    squares.each do |row|
+      row.each do |square|
+        return square if square.position == pos
+      end
+    end
+    nil
+  end
+
   def pos_to_coord(pos_str)
     squares.each_with_index do |row, row_idx|
       row.each_with_index do |square, idx|
