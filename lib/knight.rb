@@ -24,8 +24,10 @@ class Knight < Piece
 
   def directions
     [
-      [-2, -1], [+2, -1], [-2, +1], [+2, +1],
-      [-1, +2], [-1, -2], [+1, +2], [+1, -2]
+      %i[up up left], %i[up up right],
+      %i[right right up], %i[right right down],
+      %i[down down right], %i[down down left],
+      %i[left left down], %i[left left up]
     ]
   end
 
