@@ -13,6 +13,10 @@ class Position
     file == other.file && rank == other.rank
   end
 
+  def ==(other)
+    file == other.file && rank == other.rank
+  end
+
   def hash
     "#{file}#{rank}".hash
   end
