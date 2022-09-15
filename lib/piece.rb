@@ -28,6 +28,10 @@ class Piece
     @coordinate = coor
   end
 
+  def update_position(pos)
+    @position = pos
+  end
+
   def self.for(letter)
     registry.find do |candidate|
       candidate.handles?(letter.downcase)
