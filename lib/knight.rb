@@ -58,9 +58,8 @@ class Knight < Piece
   end
 
   def valid_moves(board:)
-    moves.reject do |move|
-      move => [y, x]
-      current_sqr = board.squares[y][x]
+    possible_moves.reject do |position|
+      current_sqr = board.square_at_position(position)
       if current_sqr.piece
         current_sqr.piece.color == color
       end
