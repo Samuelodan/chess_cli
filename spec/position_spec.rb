@@ -39,15 +39,6 @@ RSpec.describe Position do
         expect(new_pos).to eql(expected_pos)
       end
     end
-
-    context 'when position is highest rank' do
-      it 'returns the same object without incrementing' do
-        pos = Position.new(file: 'e', rank: 8)
-        expected_pos = Position.new(file: 'e', rank: 8)
-        new_pos = pos.up
-        expect(new_pos).to eql(expected_pos)
-      end
-    end
   end
 
   describe '#down' do
@@ -64,15 +55,6 @@ RSpec.describe Position do
       it 'returns b1 position object' do
         pos = Position.new(file: 'b', rank: 2)
         expected_pos = Position.new(file: 'b', rank: 1)
-        new_pos = pos.down
-        expect(new_pos).to eql(expected_pos)
-      end
-    end
-
-    context 'when position is lowest rank' do
-      it 'returns the same object without decrement' do
-        pos = Position.new(file: 'e', rank: 1)
-        expected_pos = Position.new(file: 'e', rank: 1)
         new_pos = pos.down
         expect(new_pos).to eql(expected_pos)
       end
@@ -97,15 +79,6 @@ RSpec.describe Position do
         expect(new_pos).to eql(expected_pos)
       end
     end
-
-    context 'when position is lowest file' do
-      it 'returns the same object without decrement' do
-        pos = Position.new(file: 'a', rank: 5)
-        expected_pos = Position.new(file: 'a', rank: 5)
-        new_pos = pos.left
-        expect(new_pos).to eql(expected_pos)
-      end
-    end
   end
 
   describe '#right' do
@@ -122,15 +95,6 @@ RSpec.describe Position do
       it 'returns d7 position object' do
         pos = Position.new(file: 'c', rank: 7)
         expected_pos = Position.new(file: 'd', rank: 7)
-        new_pos = pos.right
-        expect(new_pos).to eql(expected_pos)
-      end
-    end
-
-    context 'when position is highest file' do
-      it 'returns the same object without increment' do
-        pos = Position.new(file: 'h', rank: 7)
-        expected_pos = Position.new(file: 'h', rank: 7)
         new_pos = pos.right
         expect(new_pos).to eql(expected_pos)
       end
