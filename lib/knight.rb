@@ -22,6 +22,18 @@ class Knight < Piece
     validate_coor(mv_arr)
   end
 
+  def possible_moves
+    moves_array = []
+    directions.each do |dir_list|
+      temp_pos = @position
+      dir_list.each do |dir|
+        temp_pos = temp_pos.send(dir)
+      end
+      moves_array << temp_pos
+    end
+    moves_on_board(moves_array)
+  end
+
   def directions
     [
       %i[up up left], %i[up up right],
@@ -29,6 +41,13 @@ class Knight < Piece
       %i[down down right], %i[down down left],
       %i[left left down], %i[left left up]
     ]
+  end
+
+  def moves_on_board(pos_list)
+    board = Board.new
+    pos_list.select do |pos|
+      board.square_at_position(pos)
+    end
   end
 
   def validate_coor(coor_list)
