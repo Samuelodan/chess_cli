@@ -100,5 +100,16 @@ RSpec.describe Position do
       end
     end
   end
+
+  describe 'Position.for' do
+    context 'when string is a3' do
+      it 'returns Position a3' do
+        string = 'a3'
+        expected_pos = Position.new(file: 'a', rank: 3)
+        new_pos = Position.for(string)
+        expect(new_pos).to eql(expected_pos)
+      end
+    end
+  end
 end
 
