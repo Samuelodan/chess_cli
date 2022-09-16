@@ -188,6 +188,11 @@ class Board
     nil
   end
 
+  def update_targ_and_dest(target:, destination:)
+    store_selected_piece(target)
+    store_target_position(destination)
+  end
+
   def select_piece(pos_str)
     square_at_position(Position.for(pos_str)).piece
   end
