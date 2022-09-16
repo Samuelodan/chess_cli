@@ -18,7 +18,7 @@ class Board
     @squares = build_board
     @selected_square = nil
     @sel_pc_moves = nil
-    @target_position = nil
+    @destination_position = nil
   end
 
   def create_squares
@@ -190,7 +190,7 @@ class Board
 
   def update_targ_and_dest(target:, destination:)
     store_selected_square(target)
-    store_target_position(destination)
+    store_dest_position(destination)
     update_current_pc_pos
   end
 
@@ -207,8 +207,8 @@ class Board
     @selected_square = select_square_from_str(pos_str)
   end
 
-  def store_target_position(pos_str)
-    @target_position = Position.for(pos_str)
+  def store_dest_position(pos_str)
+    @destination_position = Position.for(pos_str)
   end
 
   def place_piece(pos_str)
