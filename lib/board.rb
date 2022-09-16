@@ -193,12 +193,12 @@ class Board
     store_target_position(destination)
   end
 
-  def select_piece(pos_str)
+  def select_piece_from_str(pos_str)
     square_at_position(Position.for(pos_str)).piece
   end
 
   def store_selected_piece(pos_str)
-    @selected_piece = select_piece(pos_str)
+    @selected_piece = select_piece_from_str(pos_str)
   end
 
   def store_target_position(pos_str)
