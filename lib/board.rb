@@ -18,6 +18,7 @@ class Board
     @squares = build_board
     @selected_piece = nil
     @sel_pc_moves = nil
+    @target_position = nil
   end
 
   def create_squares
@@ -193,6 +194,10 @@ class Board
 
   def store_selected_piece(pos_str)
     @selected_piece = select_piece(pos_str)
+  end
+
+  def store_target_position(pos_str)
+    @target_position = Position.for(pos_str)
   end
 
   def place_piece(pos_str)
