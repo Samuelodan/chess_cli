@@ -189,7 +189,7 @@ class Board
   end
 
   def update_targ_and_dest(target:, destination:)
-    store_selected_piece(target)
+    store_selected_square(target)
     store_target_position(destination)
   end
 
