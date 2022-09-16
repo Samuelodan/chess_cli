@@ -16,7 +16,7 @@ class Board
 
   def initialize
     @squares = build_board
-    @selected_piece = nil
+    @selected_square = nil
     @sel_pc_moves = nil
     @target_position = nil
   end
@@ -197,8 +197,8 @@ class Board
     square_at_position(Position.for(pos_str))
   end
 
-  def store_selected_piece(pos_str)
-    @selected_piece = select_piece_from_str(pos_str)
+  def store_selected_square(pos_str)
+    @selected_square = select_square_from_str(pos_str)
   end
 
   def store_target_position(pos_str)
