@@ -193,6 +193,11 @@ class Board
     store_target_position(destination)
   end
 
+  def update_current_pc_pos
+    sqr_pos = @selected_square.position
+    @selected_square.piece.update_position(sqr_pos)
+  end
+
   def select_square_from_str(pos_str)
     square_at_position(Position.for(pos_str))
   end
