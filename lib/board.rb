@@ -16,6 +16,8 @@ class Board
 
   def initialize
     @squares = build_board
+    @selected_piece = nil
+    @sel_pc_moves = nil
   end
 
   def create_squares
