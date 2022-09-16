@@ -191,6 +191,7 @@ class Board
   def update_targ_and_dest(target:, destination:)
     store_selected_square(target)
     store_target_position(destination)
+    update_current_pc_pos
   end
 
   def update_current_pc_pos
