@@ -187,6 +187,14 @@ class Board
     nil
   end
 
+  def select_piece(pos_str)
+    square_at_position(Position.for(pos_str)).piece
+  end
+
+  def store_selected_piece(pos_str)
+    @selected_piece = select_piece(pos_str)
+  end
+
   def place_piece(pos_str)
     target_pos, dest_pos = pos_str.slice(0, 2), pos_str.slice(2, 2)
     square = square_at_pos(target_pos)
