@@ -21,6 +21,8 @@ class Board
     @destination_position = nil
   end
 
+  private
+
   def create_squares
     sqs = Array.new(8) { Array.new(8) }
     sqs.each_with_index do |row, row_idx|
@@ -78,6 +80,7 @@ class Board
     @squares = build_board
   end
 
+  public
 
   def display_board
     puts '    a  b  c  d  e  f  g  h'
@@ -96,6 +99,20 @@ class Board
     arrange_black_pieces
     arrange_white_pieces
   end
+
+  def arrange_pieces_from_fen(full_fen_str)
+    clear_board
+    fen_array = simplify_fen(full_fen_str).split('/')
+    squares.each_with_index do |row, row_idx|
+      row.each_with_index do |sqr, idx|
+        current_fen_char = fen_array[row_idx][idx]
+        next if current_fen_char == '1'
+        squares[row_idx][idx].piece = Piece.for(current_fen_char)
+      end
+    end
+  end
+
+  private
 
   def arrange_black_pieces
     squares[1].each do |sqr|
@@ -133,17 +150,7 @@ class Board
     new_str
   end
 
-  def arrange_pieces_from_fen(full_fen_str)
-    clear_board
-    fen_array = simplify_fen(full_fen_str).split('/')
-    squares.each_with_index do |row, row_idx|
-      row.each_with_index do |sqr, idx|
-        current_fen_char = fen_array[row_idx][idx]
-        next if current_fen_char == '1'
-        squares[row_idx][idx].piece = Piece.for(current_fen_char)
-      end
-    end
-  end
+  public
 
   def square_at_position(pos)
     squares.each do |row|
@@ -160,6 +167,22 @@ class Board
     update_current_pc_pos
     store_pc_moves
   end
+
+  def is_move_valid?
+    @sel_pc_moves.include?(@destination_position)
+  end
+
+  def place_piece
+    return unless is_move_valid?
+
+    current_pc = @selected_square.piece
+    dest_square = square_at_position(@destination_position)
+    dest_square.piece = current_pc
+    current_pc.moved
+    @selected_square.piece = nil
+  end
+
+  private
 
   def update_current_pc_pos
     sqr_pos = @selected_square.position
@@ -181,20 +204,6 @@ class Board
   def store_pc_moves
     pc = @selected_square.piece
     @sel_pc_moves = pc.valid_moves(board: self)
-  end
-
-  def is_move_valid?
-    @sel_pc_moves.include?(@destination_position)
-  end
-
-  def place_piece
-    return unless is_move_valid?
-
-    current_pc = @selected_square.piece
-    dest_square = square_at_position(@destination_position)
-    dest_square.piece = current_pc
-    current_pc.moved
-    @selected_square.piece = nil
   end
 end
 
