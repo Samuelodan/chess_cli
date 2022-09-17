@@ -20,8 +20,8 @@ class Piece
     @moved
   end
 
-  def moved=(bool)
-    @moved = bool
+  def moved
+    @moved = true
   end
 
   def update_coor(coor)
