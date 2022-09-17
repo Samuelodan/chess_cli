@@ -221,16 +221,13 @@ class Board
     @sel_pc_moves.include?(@destination_position)
   end
 
-  def place_piece(pos_str)
-    target_pos, dest_pos = pos_str.slice(0, 2), pos_str.slice(2, 2)
-    square = square_at_pos(target_pos)
-    piece = square.piece
-    piece.update_coor(square_coord(square))
-    pc_move_positions = piece.valid_move_pos(board: self)
-    if pc_move_positions.include?(dest_pos)
-      square_at_pos(dest_pos).piece = piece
-      square.piece = nil
-    end
+  def place_piece
+    return unless is_move_valid?
+
+    current_pc = @selected_square.piece
+    dest_square = square_at_position(@destination_position)
+    dest_square.piece = current_pc
+    @selected_square.piece = nil
   end
 end
 
