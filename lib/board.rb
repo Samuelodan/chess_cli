@@ -145,14 +145,6 @@ class Board
     end
   end
 
-  def square_position(sqr)
-    squares.each_with_index do |row, row_idx|
-      row.each_with_index do |square, idx|
-        return square.position if square == sqr
-      end
-    end
-  end
-
   def square_at_position(pos)
     squares.each do |row|
       row.each do |square|
