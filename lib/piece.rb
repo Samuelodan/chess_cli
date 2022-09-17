@@ -51,6 +51,15 @@ class Piece
     end
   end
 
+  def valid_moves(board:)
+    possible_moves.reject do |position|
+      current_sqr = board.square_at_position(position)
+      if current_sqr.piece
+        current_sqr.piece.color == color
+      end
+    end
+  end
+
   def self.for(letter)
     registry.find do |candidate|
       candidate.handles?(letter.downcase)
