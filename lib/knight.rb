@@ -31,13 +31,6 @@ class Knight < Piece
     ]
   end
 
-  def moves_on_board(pos_list)
-    board = Board.new
-    pos_list.select do |pos|
-      board.square_at_position(pos)
-    end
-  end
-
   def validate_coor(coor_list)
     coor_list.select do |coor|
       coor => [x, y]
