@@ -192,6 +192,7 @@ class Board
     store_selected_square(target)
     store_dest_position(destination)
     update_current_pc_pos
+    store_pc_moves
   end
 
   def update_current_pc_pos
@@ -209,6 +210,11 @@ class Board
 
   def store_dest_position(pos_str)
     @destination_position = Position.for(pos_str)
+  end
+
+  def store_pc_moves
+    pc = @selected_square.piece
+    @sel_pc_moves = pc.valid_moves(board: self)
   end
 
   def place_piece(pos_str)
