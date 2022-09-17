@@ -193,6 +193,7 @@ class Board
     current_pc = @selected_square.piece
     dest_square = square_at_position(@destination_position)
     dest_square.piece = current_pc
+    current_pc.moved
     @selected_square.piece = nil
   end
 end
