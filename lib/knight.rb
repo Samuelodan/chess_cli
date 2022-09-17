@@ -12,16 +12,6 @@ class Knight < Piece
     letter == 'n'
   end
 
-  def moves
-    mv_arr = []
-    directions.each do |dir|
-      x = @coordinate[0] + dir[0]
-      y = @coordinate[1] + dir[1]
-      mv_arr << [x, y]
-    end
-    validate_coor(mv_arr)
-  end
-
   def directions
     [
       %i[up up left], %i[up up right],
