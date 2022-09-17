@@ -217,6 +217,10 @@ class Board
     @sel_pc_moves = pc.valid_moves(board: self)
   end
 
+  def is_move_valid?
+    @sel_pc_moves.include?(@destination_position)
+  end
+
   def place_piece(pos_str)
     target_pos, dest_pos = pos_str.slice(0, 2), pos_str.slice(2, 2)
     square = square_at_pos(target_pos)
