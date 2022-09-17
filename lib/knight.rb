@@ -30,21 +30,4 @@ class Knight < Piece
       %i[left left down], %i[left left up]
     ]
   end
-
-  def validate_coor(coor_list)
-    coor_list.select do |coor|
-      coor => [x, y]
-      (0..7) === x && (0..7) === y
-    end
-  end
-
-  def valid_move_pos(board:)
-    pos_arr = []
-    coords = valid_moves(board: board)
-    coords.each do |coord|
-      coord => [y, x]
-      pos_arr << board.squares[y][x].position
-    end
-    pos_arr
-  end
 end
