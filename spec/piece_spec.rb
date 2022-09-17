@@ -20,7 +20,7 @@ RSpec.describe Piece do
     end
     context 'when piece has moved' do
       before do
-        piece.moved = true
+        piece.moved
       end
 
       it 'returns true' do
