@@ -81,6 +81,15 @@ RSpec.describe Knight do
         exp_count = 3
         expect(move_count).to eql(exp_count)
       end
+
+      it 'd6 knight has 8 moves' do
+        pos = Position.for('d6')
+        piece = board.square_at_position(pos).piece
+        piece.update_position(pos)
+        move_count = piece.valid_moves(board: board).length
+        exp_count = 7
+        expect(move_count).to eql(exp_count)
+      end
     end
   end
 end
