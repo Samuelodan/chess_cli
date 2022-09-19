@@ -204,6 +204,15 @@ RSpec.describe Position do
         expect(new_pos).to eql(expected_pos)
       end
     end
+
+    context 'when position is f6' do
+      it 'returns all positions to the left' do
+        pos = Position.new(file: 'f', rank: 6)
+        expected_pos = Position.for(['e6', 'd6', 'c6', 'b6', 'a6'])
+        new_pos = pos.continue_left
+        expect(new_pos).to eql(expected_pos)
+      end
+    end
   end
 end
 
