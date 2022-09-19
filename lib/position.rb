@@ -46,5 +46,23 @@ class Position
     new_rank = pos_str[1].to_i
     Position.new(file: new_file, rank: new_rank)
   end
+
+  def self.for(pos_str)
+    if pos_str.is_a? Array
+      return self.handle_pos_arr(pos_str)
+    end
+
+    new_file = pos_str[0]
+    new_rank = pos_str[1].to_i
+    Position.new(file: new_file, rank: new_rank)
+  end
+
+  def self.handle_pos_arr(pos_arr)
+    result = []
+    pos_arr.each do |str|
+      result << self.for(str)
+    end
+    return result
+  end
 end
 
