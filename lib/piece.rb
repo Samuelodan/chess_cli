@@ -2,7 +2,7 @@
 
 # Piece superclass
 class Piece
-  attr_reader :color, :letter
+  attr_reader :color, :letter, :board
 
   def initialize(letter:)
     @letter = letter
@@ -10,6 +10,7 @@ class Piece
     @moved = false
     @position = nil
     @coordinate = nil
+    @board = nil
   end
 
   def determine_color
