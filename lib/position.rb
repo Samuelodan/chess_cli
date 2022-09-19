@@ -49,6 +49,12 @@ class Position
     ((rank - 1).downto 1).map { |rk| Position.new(file: file, rank: rk) }
   end
 
+  def continue_left
+    ('a'.upto (file.ord - 1).chr).map do |fl|
+      Position.new(file: fl, rank: rank)
+    end.reverse
+  end
+
   def self.for(pos_str)
     new_file = pos_str[0]
     new_rank = pos_str[1].to_i
