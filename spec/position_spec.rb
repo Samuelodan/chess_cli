@@ -214,5 +214,16 @@ RSpec.describe Position do
       end
     end
   end
+
+  describe '#continue_right' do
+    context 'when position is c4' do
+      it 'returns all positions to the right' do
+        pos = Position.new(file: 'c', rank: 4)
+        expected_pos = Position.for(['d4', 'e4', 'f4', 'g4', 'h4'])
+        new_pos = pos.continue_right
+        expect(new_pos).to eql(expected_pos)
+      end
+    end
+  end
 end
 
