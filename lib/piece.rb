@@ -33,6 +33,10 @@ class Piece
     @position = pos
   end
 
+  def update_board(board)
+    @board = board
+  end
+
   def possible_moves
     moves_array = []
     directions.each do |dir_list|
