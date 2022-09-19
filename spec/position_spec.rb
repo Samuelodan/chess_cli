@@ -174,5 +174,16 @@ RSpec.describe Position do
       end
     end
   end
+
+  describe '#continue_down' do
+    context 'when position is c4' do
+      it 'returns all positions down' do
+        pos = Position.new(file: 'c', rank: 4)
+        expected_pos = Position.for(['c3', 'c2', 'c1'])
+        new_pos = pos.continue_down
+        expect(new_pos).to eql(expected_pos)
+      end
+    end
+  end
 end
 
