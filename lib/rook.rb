@@ -10,5 +10,12 @@ class Rook < Piece
   def self.handles?(letter)
     letter == 'r'
   end
+
+  def directions
+    [
+      %i[continue_up], %i[continue_down],
+      %i[continue_left], %i[continue_right]
+    ]
+  end
 end
 
