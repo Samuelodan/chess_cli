@@ -213,6 +213,15 @@ RSpec.describe Position do
         expect(new_pos).to eql(expected_pos)
       end
     end
+
+    context 'when in leftmost position' do
+      it 'returns an empty array' do
+        pos = Position.new(file: 'a', rank: 6)
+        expected_pos = []
+        new_pos = pos.continue_left
+        expect(new_pos).to eql(expected_pos)
+      end
+    end
   end
 
   describe '#continue_right' do
