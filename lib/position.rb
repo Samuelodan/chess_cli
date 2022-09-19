@@ -55,6 +55,10 @@ class Position
     end.reverse
   end
 
+  def continue_right
+    (file.next.upto 'h').map { |fl| Position.new(file: fl, rank: rank) }
+  end
+
   def self.for(pos_str)
     new_file = pos_str[0]
     new_rank = pos_str[1].to_i
