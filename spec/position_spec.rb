@@ -119,6 +119,17 @@ RSpec.describe Position do
         expect(new_pos).to eql(expected_pos)
       end
     end
+
+    context 'when an array of 2 position strings is supplied' do
+      it 'returns array of position objects' do
+        pos_str_arr = ['a2', 'd8']
+        pos_1 = Position.new(file: 'a', rank: 2)
+        pos_2 = Position.new(file: 'd', rank: 8)
+        expected_pos = [pos_1, pos_2]
+        new_pos = Position.for(pos_str_arr)
+        expect(new_pos).to eql(expected_pos)
+      end
+    end
   end
 end
 
