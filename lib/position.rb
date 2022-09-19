@@ -42,7 +42,7 @@ class Position
   end
 
   def continue_up
-    ((rank + 1)..8).map { |rk| Position.new(file: file, rank: rk) }
+    ((rank + 1).upto 8).map { |rk| Position.new(file: file, rank: rk) }
   end
 
   def self.for(pos_str)
