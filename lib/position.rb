@@ -45,6 +45,10 @@ class Position
     ((rank + 1).upto 8).map { |rk| Position.new(file: file, rank: rk) }
   end
 
+  def continue_down
+    ((rank - 1).downto 1).map { |rk| Position.new(file: file, rank: rk) }
+  end
+
   def self.for(pos_str)
     new_file = pos_str[0]
     new_rank = pos_str[1].to_i
