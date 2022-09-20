@@ -72,6 +72,19 @@ class Piece
     end
   end
 
+  def handle_collision(pos_arrays)
+    return pos_arrays unless pos_arrays.nested?
+
+    result = []
+    pos_arrays.each do |arr|
+      arr.each do |pos|
+        result << pos
+        break if board.square_at_position(pos).piece
+      end
+    end
+    result
+  end
+
   def self.for(letter)
     registry.find do |candidate|
       candidate.handles?(letter.downcase)
