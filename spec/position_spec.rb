@@ -328,5 +328,16 @@ RSpec.describe Position do
       end
     end
   end
+
+  describe '#continue_bottom_left' do
+    context 'when position is c4' do
+      it 'returns all bottom left diagonal positions' do
+        pos = Position.new(file: 'c', rank: 4)
+        expected_pos = Position.for(['b3', 'a2'])
+        new_pos = pos.continue_bottom_left
+        expect(new_pos).to eql(expected_pos)
+      end
+    end
+  end
 end
 
