@@ -52,5 +52,22 @@ RSpec.describe Bishop do
         expect(move_count).to eql(exp_count)
       end
     end
+
+    context 'for fen string 2' do
+      before do
+        fen_str1 = 'r2qk2r/pppppppp/n2b4/7n/3b4/3BPB1P/PPPP1P1P/RN1QK1NR w KQkq - 0 1'
+        board.arrange_pieces_from_fen(fen_str1)
+      end
+
+      it 'd3 bishop has 9 moves' do
+        pos = Position.for('d3')
+        piece = board.square_at_position(pos).piece
+        piece.update_position(pos)
+        piece.update_board(board)
+        move_count = piece.valid_moves.length
+        exp_count = 9
+        expect(move_count).to eql(exp_count)
+      end
+    end
   end
 end
