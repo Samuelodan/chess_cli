@@ -205,7 +205,7 @@ class Board
 
   def store_pc_moves
     pc = @selected_square.piece
-    @sel_pc_moves = pc.valid_moves(board: self)
+    @sel_pc_moves = pc.valid_moves
   end
 end
 
