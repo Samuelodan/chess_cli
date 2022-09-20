@@ -61,8 +61,11 @@ class Position
 
   def continue_top_right
     tmp_fl = file
-    ((rank + 1).upto 8).map do
+    res = ((rank + 1).upto 8).map do
       |rk| Position.new(file: tmp_fl = tmp_fl.next, rank: rk)
+    end
+    res.select do |pos|
+      ('a'..'h') === pos.file
     end
   end
 
