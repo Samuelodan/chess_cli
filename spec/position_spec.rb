@@ -280,6 +280,15 @@ RSpec.describe Position do
         expect(new_pos).to eql(expected_pos)
       end
     end
+
+    context 'when position is f6' do
+      it 'returns all top right diagonal positions' do
+        pos = Position.new(file: 'f', rank: 6)
+        expected_pos = Position.for(['g7', 'h8'])
+        new_pos = pos.top_right
+        expect(new_pos).to eql(expected_pos)
+      end
+    end
   end
 end
 
