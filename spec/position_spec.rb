@@ -271,12 +271,12 @@ RSpec.describe Position do
     end
   end
 
-  describe '#top_right' do
+  describe '#continue_top_right' do
     context 'when position is c4' do
       it 'returns all top right diagonal positions' do
         pos = Position.new(file: 'c', rank: 4)
         expected_pos = Position.for(['d5', 'e6', 'f7', 'g8'])
-        new_pos = pos.top_right
+        new_pos = pos.continue_top_right
         expect(new_pos).to eql(expected_pos)
       end
     end
@@ -285,7 +285,7 @@ RSpec.describe Position do
       it 'returns all top right diagonal positions' do
         pos = Position.new(file: 'f', rank: 6)
         expected_pos = Position.for(['g7', 'h8'])
-        new_pos = pos.top_right
+        new_pos = pos.continue_top_right
         expect(new_pos).to eql(expected_pos)
       end
     end
@@ -294,7 +294,7 @@ RSpec.describe Position do
       it 'returns an empty array' do
         pos = Position.new(file: 'f', rank: 8)
         expected_pos = []
-        new_pos = pos.top_right
+        new_pos = pos.continue_top_right
         expect(new_pos).to eql(expected_pos)
       end
     end
