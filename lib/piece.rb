@@ -53,7 +53,7 @@ class Piece
       end
       moves_array << temp_pos
     end
-    handle_collision(moves_on_board(moves_array))
+    moves_on_board(handle_collision(moves_array))
   end
 
   def moves_on_board(pos_list)
