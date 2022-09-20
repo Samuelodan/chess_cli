@@ -68,8 +68,8 @@ class Position
 
   def continue_bottom_right
     tmp_fl = file
-    res = ((rank - 1).downto 1).map do
-      |rk| Position.new(file: tmp_fl = tmp_fl.next, rank: rk)
+    res = ((rank - 1).downto 1).map do |rk|
+      Position.new(file: tmp_fl = tmp_fl.next, rank: rk)
     end
     res.select do |pos|
       ('a'..'h') === pos.file
@@ -78,8 +78,8 @@ class Position
 
   def continue_bottom_left
     tmp_fl = file
-    res = ((rank - 1).downto 1).map do
-      |rk| Position.new(file: tmp_fl = ((tmp_fl.ord - 1).chr), rank: rk)
+    res = ((rank - 1).downto 1).map do |rk|
+      Position.new(file: tmp_fl = ((tmp_fl.ord - 1).chr), rank: rk)
     end
     res.select do |pos|
       ('a'..'h') === pos.file
