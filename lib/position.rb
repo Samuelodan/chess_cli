@@ -59,7 +59,7 @@ class Position
     (file.next.upto 'h').map { |fl| Position.new(file: fl, rank: rank) }
   end
 
-  def top_right
+  def continue_top_right
     tmp_fl = file
     ((rank + 1).upto 8).map do
       |rk| Position.new(file: tmp_fl = tmp_fl.next, rank: rk)
