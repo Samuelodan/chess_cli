@@ -376,6 +376,15 @@ RSpec.describe Position do
         expect(new_pos).to eql(expected_pos)
       end
     end
+
+    context 'when in topmost position' do
+      it 'returns an empty array' do
+        pos = Position.new(file: 'f', rank: 8)
+        expected_pos = []
+        new_pos = pos.continue_top_left
+        expect(new_pos).to eql(expected_pos)
+      end
+    end
   end
 end
 
