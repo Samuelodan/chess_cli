@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 require_relative './piece'
+require_relative './board'
 
 # rook subclass
 class Rook < Piece
