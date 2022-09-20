@@ -1,5 +1,12 @@
 # frozen_string_literal: true
 
+# custom method for this project
+class Array
+  def nested?
+    self != self.flatten
+  end
+end
+
 # Piece superclass
 class Piece
   attr_reader :color, :letter, :board
