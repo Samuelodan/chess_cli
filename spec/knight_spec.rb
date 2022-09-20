@@ -17,7 +17,7 @@ RSpec.describe Knight do
         piece = board.square_at_position(pos).piece
         piece.update_position(pos)
         piece.update_board(self)
-        move_count = piece.valid_moves(board: board).length
+        move_count = piece.valid_moves.length
         exp_count = 5
         expect(move_count).to eql(exp_count)
       end
@@ -27,7 +27,7 @@ RSpec.describe Knight do
         piece = board.square_at_position(pos).piece
         piece.update_position(pos)
         piece.update_board(self)
-        move_count = piece.valid_moves(board: board).length
+        move_count = piece.valid_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
       end
@@ -37,7 +37,7 @@ RSpec.describe Knight do
         piece = board.square_at_position(pos).piece
         piece.update_position(pos)
         piece.update_board(self)
-        move_count = piece.valid_moves(board: board).length
+        move_count = piece.valid_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
       end
@@ -47,7 +47,7 @@ RSpec.describe Knight do
         piece = board.square_at_position(pos).piece
         piece.update_position(pos)
         piece.update_board(self)
-        move_count = piece.valid_moves(board: board).length
+        move_count = piece.valid_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
       end
@@ -64,7 +64,7 @@ RSpec.describe Knight do
         piece = board.square_at_position(pos).piece
         piece.update_position(pos)
         piece.update_board(self)
-        move_count = piece.valid_moves(board: board).length
+        move_count = piece.valid_moves.length
         exp_count = 8
         expect(move_count).to eql(exp_count)
       end
@@ -74,7 +74,7 @@ RSpec.describe Knight do
         piece = board.square_at_position(pos).piece
         piece.update_position(pos)
         piece.update_board(self)
-        move_count = piece.valid_moves(board: board).length
+        move_count = piece.valid_moves.length
         exp_count = 3
         expect(move_count).to eql(exp_count)
       end
@@ -84,7 +84,7 @@ RSpec.describe Knight do
         piece = board.square_at_position(pos).piece
         piece.update_position(pos)
         piece.update_board(self)
-        move_count = piece.valid_moves(board: board).length
+        move_count = piece.valid_moves.length
         exp_count = 3
         expect(move_count).to eql(exp_count)
       end
@@ -94,7 +94,7 @@ RSpec.describe Knight do
         piece = board.square_at_position(pos).piece
         piece.update_position(pos)
         piece.update_board(self)
-        move_count = piece.valid_moves(board: board).length
+        move_count = piece.valid_moves.length
         exp_count = 7
         expect(move_count).to eql(exp_count)
       end
