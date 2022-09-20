@@ -31,6 +31,16 @@ RSpec.describe Bishop do
         exp_count = 5
         expect(move_count).to eql(exp_count)
       end
+
+      it 'h6 bishop has 3 moves' do
+        pos = Position.for('h6')
+        piece = board.square_at_position(pos).piece
+        piece.update_position(pos)
+        piece.update_board(board)
+        move_count = piece.valid_moves.length
+        exp_count = 3
+        expect(move_count).to eql(exp_count)
+      end
     end
   end
 end
