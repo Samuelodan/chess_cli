@@ -76,6 +76,16 @@ class Position
     end
   end
 
+  def continue_bottom_left
+    tmp_fl = file
+    res = ((rank - 1).downto 1).map do
+      |rk| Position.new(file: tmp_fl = ((tmp_fl.ord - 1).chr), rank: rk)
+    end
+    res.select do |pos|
+      ('a'..'h') === pos.file
+    end
+  end
+
   def self.for(pos_str)
     new_file = pos_str[0]
     new_rank = pos_str[1].to_i
