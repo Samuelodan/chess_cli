@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative './piece'
+require_relative './board'
 
 # pawn subclass
 class Pawn < Piece
