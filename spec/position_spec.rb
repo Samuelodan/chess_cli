@@ -396,6 +396,15 @@ RSpec.describe Position do
         expect(new_pos).to eql(expected_pos)
       end
     end
+
+    context 'when position is b1' do
+      it 'returns c2 position object' do
+        pos = Position.new(file: 'b', rank: 1)
+        expected_pos = Position.new(file: 'c', rank: 2)
+        new_pos = pos.top_right
+        expect(new_pos).to eql(expected_pos)
+      end
+    end
   end
 end
 
