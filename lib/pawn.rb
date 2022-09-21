@@ -11,5 +11,9 @@ class Pawn < Piece
   def self.handles?(letter)
     letter == 'p'
   end
+
+  def directions
+    [ %i[up] ]
+  end
 end
 
