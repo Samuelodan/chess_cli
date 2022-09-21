@@ -64,6 +64,16 @@ RSpec.describe Pawn do
         exp_count = 0
         expect(move_count).to eql(exp_count)
       end
+
+      it 'f7 pawn has 2 moves' do
+        pos = Position.for('f7')
+        piece = board.square_at_position(pos).piece
+        piece.update_position(pos)
+        piece.update_board(board)
+        move_count = piece.valid_moves.length
+        exp_count = 2
+        expect(move_count).to eql(exp_count)
+      end
     end
   end
 end
