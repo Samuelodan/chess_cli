@@ -13,6 +13,8 @@ class Pawn < Piece
   end
 
   def directions
+    return [ %i[up], %i[up up] ] unless moved?
+
     [ %i[up] ]
   end
 end
