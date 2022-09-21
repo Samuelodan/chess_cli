@@ -105,6 +105,12 @@ class Position
     Position.new(file: new_file, rank: new_rank)
   end
 
+  def bottom_right
+    new_file = file.next
+    new_rank = rank.pred
+    Position.new(file: new_file, rank: new_rank)
+  end
+
   def self.for(pos_str)
     new_file = pos_str[0]
     new_rank = pos_str[1].to_i
