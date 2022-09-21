@@ -32,6 +32,23 @@ RSpec.describe King do
         expect(move_count).to eql(exp_count)
       end
     end
+
+    context 'for fen string 2' do
+      before do
+        fen_str2 = 'rnbq1b1r/pppppp1p/8/1k6/3pPKn1/6P1/PPPPP2P/RNBQ1BNR w HAha - 0 1'
+        board.arrange_pieces_from_fen(fen_str2)
+      end
+
+      it 'f4 king has 6 moves' do
+        pos = Position.for('f4')
+        piece = board.square_at_position(pos).piece
+        piece.update_position(pos)
+        piece.update_board(board)
+        move_count = piece.valid_moves.length
+        exp_count = 6
+        expect(move_count).to eql(exp_count)
+      end
+    end
   end
 end
 
