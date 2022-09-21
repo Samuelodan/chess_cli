@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative './piece'
+require_relative './board'
 
 # king subclass
 class King < Piece
