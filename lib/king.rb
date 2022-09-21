@@ -11,5 +11,14 @@ class King < Piece
   def self.handles?(letter)
     letter == 'k'
   end
+
+  def directions
+    [
+      %i[up], %i[top_right],
+      %i[right], %i[bottom_right],
+      %i[down], %i[bottom_left],
+      %i[left], %i[top_left],
+    ]
+  end
 end
 
