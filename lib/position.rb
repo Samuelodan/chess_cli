@@ -124,12 +124,6 @@ class Position
   end
 
   def self.for(pos_str)
-    new_file = pos_str[0]
-    new_rank = pos_str[1].to_i
-    Position.new(file: new_file, rank: new_rank)
-  end
-
-  def self.for(pos_str)
     if pos_str.is_a? Array
       return self.handle_pos_arr(pos_str)
     end
