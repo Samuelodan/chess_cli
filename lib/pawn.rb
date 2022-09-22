@@ -39,5 +39,16 @@ class Pawn < Piece
 
     true
   end
+
+  def enemy_at_black_top_right?
+    # flipped to emulate pieces facing opposite directions
+    tr = @position.bottom_left
+    square_at_tr = board.square_at_position(tr)
+    return false unless square_at_tr
+    piece_at_tr = square_at_tr.piece
+    return false if piece_at_tr.nil? || piece_at_tr.color == color
+
+    true
+  end
 end
 
