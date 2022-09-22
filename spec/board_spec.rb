@@ -36,5 +36,15 @@ RSpec.describe Board do
       end
     end
   end
+
+  describe '#square_at_position' do
+    context 'when position does not exist on the board' do
+      it 'returns nil' do
+        pos = Position.for('f9')
+        sqr = board.square_at_position(pos)
+        expect(sqr).to be nil
+      end
+    end
+  end
 end
 
