@@ -23,6 +23,14 @@ class Pawn < Piece
     return black_pawn_moves if color == :black
   end
 
+  def valid_moves
+    regular_moves = possible_moves.reject do |position|
+      current_sqr = board.square_at_position(position)
+      current_sqr.piece
+    end
+    regular_moves + @attack_positions
+  end
+
   def white_pawn_moves
     @attack_positions.clear
     @attack_positions << @position.top_right if enemy_at_top_right?
