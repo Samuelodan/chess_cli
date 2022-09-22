@@ -45,6 +45,14 @@ RSpec.describe Board do
         expect(sqr).to be nil
       end
     end
+
+    context 'when position exists on the board' do
+      it 'returns the square' do
+        pos = Position.for('f6')
+        sqr = board.square_at_position(pos)
+        expect(sqr).to be_a(Square)
+      end
+    end
   end
 end
 
