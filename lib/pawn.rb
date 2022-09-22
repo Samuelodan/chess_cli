@@ -19,9 +19,8 @@ class Pawn < Piece
   end
 
   def directions
-    return [ %i[up], %i[up up] ] unless moved?
-
-    [ %i[up] ]
+    return white_pawn_moves if color == :white
+    return black_pawn_moves if color == :black
   end
 
   def white_pawn_moves
