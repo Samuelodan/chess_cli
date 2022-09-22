@@ -24,6 +24,15 @@ class Pawn < Piece
     [ %i[up] ]
   end
 
+  def white_pawn_moves
+    @attack_positions.clear
+    @attack_positions << @position.top_right if enemy_at_top_right?
+    @attack_positions << @position.top_left if enemy_at_top_left?
+    final_moves = [ %i[up] ]
+    final_moves.push(%i[up up]) unless moved?
+    final_moves
+  end
+
   def enemy_at_top_right?
     tr = @position.top_right
     square_at_tr = board.square_at_position(tr)
