@@ -5,6 +5,10 @@ require_relative './board'
 
 # pawn subclass
 class Pawn < Piece
+  def initialize(letter:)
+    super
+    @attack_positions = []
+  end
 
   def symbol
     sym = color == :white ? "\u2659" : "\u265f"
