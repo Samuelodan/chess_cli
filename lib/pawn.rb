@@ -18,17 +18,19 @@ class Pawn < Piece
     letter == 'p'
   end
 
-  def directions
-    return white_pawn_moves if color == :white
-    return black_pawn_moves if color == :black
-  end
-
   def valid_moves
     regular_moves = possible_moves.reject do |position|
       current_sqr = board.square_at_position(position)
       current_sqr.piece
     end
     regular_moves + @attack_positions
+  end
+
+  private
+
+  def directions
+    return white_pawn_moves if color == :white
+    return black_pawn_moves if color == :black
   end
 
   def white_pawn_moves
