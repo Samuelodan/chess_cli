@@ -129,7 +129,7 @@ class Position
     end
 
     new_file = pos_str[0]
-    new_rank = pos_str[1].to_i
+    new_rank = pos_str.slice(1..-1).to_i
     Position.new(file: new_file, rank: new_rank)
   end
 
