@@ -145,6 +145,12 @@ RSpec.describe Board do
           board.place_piece
         end.to_not change { dest_sqr.piece }
       end
+
+      it 'does not mark piece as moved' do
+        expect do
+          board.place_piece
+        end.to_not change { @piece.moved? }
+      end
     end
   end
 end
