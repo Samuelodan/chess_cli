@@ -49,6 +49,20 @@ RSpec.describe Square do
         end.to output("\e[48;2;240;217;181m\e[30m #{piece.symbol} \e[0m").to_stdout
       end
     end
+
+    context 'for white square and white pawn' do
+      before do
+        square.color = :white
+        square.piece = piece
+        allow(piece).to receive(:symbol).and_return("\u2659")
+      end
+
+      specify do
+        expect do
+          square.draw_square
+        end.to output("\e[48;2;240;217;181m\e[30m #{piece.symbol} \e[0m").to_stdout
+      end
+    end
   end
 end
 
