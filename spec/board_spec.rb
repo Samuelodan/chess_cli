@@ -139,7 +139,7 @@ RSpec.describe Board do
         @piece = board.instance_variable_get(:@selected_square).piece
       end
 
-      it 'does not move piece' do
+      it 'does not move piece to destination square' do
         dest_sqr = board.send(:select_square_from_str, 'a5')
         expect do
           board.place_piece
