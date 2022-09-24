@@ -85,5 +85,13 @@ RSpec.describe Pawn do
         expect(piece.symbol).to eql(exp_sym)
       end
     end
+
+    context 'for black pawn' do
+      it 'returns the correct symbol' do
+        piece = Piece.for('p')
+        exp_sym = "\u265f"
+        expect(piece.symbol).to eql(exp_sym)
+      end
+    end
   end
 end
