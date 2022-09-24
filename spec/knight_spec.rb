@@ -100,5 +100,15 @@ RSpec.describe Knight do
       end
     end
   end
+
+  describe '#symbol' do
+    context 'for white knight' do
+      it 'returns the correct symbol' do
+        piece = Piece.for('N')
+        exp_sym = "\u2658"
+        expect(piece.symbol).to eql(exp_sym)
+      end
+    end
+  end
 end
 
