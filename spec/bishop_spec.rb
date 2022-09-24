@@ -100,4 +100,14 @@ RSpec.describe Bishop do
       end
     end
   end
+
+  describe '#symbol' do
+    context 'for white bishop' do
+      it 'returns the correct symbol' do
+        piece = Piece.for('B')
+        exp_sym = "\u2657"
+        expect(piece.symbol).to eql(exp_sym)
+      end
+    end
+  end
 end
