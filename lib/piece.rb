@@ -16,7 +16,6 @@ class Piece
     @color = determine_color
     @moved = false
     @position = nil
-    @coordinate = nil
     @board = nil
   end
 
@@ -30,10 +29,6 @@ class Piece
 
   def moved
     @moved = true
-  end
-
-  def update_coor(coor)
-    @coordinate = coor
   end
 
   def update_position(pos)
