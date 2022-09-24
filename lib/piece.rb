@@ -9,7 +9,7 @@ end
 
 # Piece superclass
 class Piece
-  attr_reader :color, :letter, :board
+  attr_reader :color, :letter, :board, :position
 
   def initialize(letter:)
     @letter = letter
