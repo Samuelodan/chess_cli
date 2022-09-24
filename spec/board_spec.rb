@@ -115,6 +115,12 @@ RSpec.describe Board do
           board.place_piece
         end.to change { dest_sqr.piece }.from(nil).to(@piece)
       end
+
+      it 'marks piece as moved' do
+        expect do
+          board.place_piece
+        end.to change { @piece.moved? }.from(false).to(true)
+      end
     end
   end
 end
