@@ -77,6 +77,17 @@ RSpec.describe Board do
       inner_dest_pos = board.instance_variable_get(:@destination_position)
       expect(inner_dest_pos).to eql(dest_pos)
     end
+
+    it 'updates piece position' do
+      target = 'a2'
+      destination = 'a4'
+      targ_sqr = board.square_at_position(Position.for(target))
+      sqr_pos = targ_sqr.position
+      piece = targ_sqr.piece
+      expect do
+        board.update_targ_and_dest(target: target, destination: destination)
+      end.to change { piece.position }.from(nil).to(sqr_pos)
+    end
   end
 end
 
