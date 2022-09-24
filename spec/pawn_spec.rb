@@ -76,4 +76,14 @@ RSpec.describe Pawn do
       end
     end
   end
+
+  describe '#symbol' do
+    context 'for white pawn' do
+      it 'returns the correct symbol' do
+        piece = Piece.for('P')
+        exp_sym = "\u2659"
+        expect(piece.symbol).to eql(exp_sym)
+      end
+    end
+  end
 end
