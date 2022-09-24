@@ -88,6 +88,15 @@ RSpec.describe Board do
         board.update_targ_and_dest(target: target, destination: destination)
       end.to change { piece.position }.from(nil).to(sqr_pos)
     end
+
+    it 'saves piece moves to board' do
+      target = 'a2'
+      destination = 'a4'
+      a2_moves = Position.for(['a3', 'a4'])
+      board.update_targ_and_dest(target: target, destination: destination)
+      inner_sel_pc_moves = board.instance_variable_get(:@sel_pc_moves)
+      expect(inner_sel_pc_moves).to eql(a2_moves)
+    end
   end
 end
 
