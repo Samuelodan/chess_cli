@@ -100,15 +100,15 @@ RSpec.describe Board do
   end
 
   describe '#place_piece' do
-    before do
-      target = 'a2'
-      destination = 'a4'
-      board.arrange_pieces
-      board.update_targ_and_dest(target: target, destination: destination)
-      @piece = board.instance_variable_get(:@selected_square).piece
-    end
-
     context 'when destination is valid' do
+      before do
+        target = 'a2'
+        destination = 'a4'
+        board.arrange_pieces
+        board.update_targ_and_dest(target: target, destination: destination)
+        @piece = board.instance_variable_get(:@selected_square).piece
+      end
+
       it 'moves piece to destination square' do
         dest_sqr = board.send(:select_square_from_str, 'a4')
         expect do
