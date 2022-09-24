@@ -63,6 +63,18 @@ RSpec.describe Square do
         end.to output("\e[48;2;240;217;181m\e[30m #{piece.symbol} \e[0m").to_stdout
       end
     end
+
+    context 'for white square and no piece' do
+      before do
+        square.color = :white
+      end
+
+      specify do
+        expect do
+          square.draw_square
+        end.to output("\e[48;2;240;217;181m\e[30m   \e[0m").to_stdout
+      end
+    end
   end
 end
 
