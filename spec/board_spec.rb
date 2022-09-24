@@ -121,6 +121,13 @@ RSpec.describe Board do
           board.place_piece
         end.to change { @piece.moved? }.from(false).to(true)
       end
+
+      it 'empties previous square' do
+        targ_sqr = board.send(:select_square_from_str, 'a2')
+        expect do
+          board.place_piece
+        end.to change { targ_sqr.piece }.from(@piece).to(nil)
+      end
     end
   end
 end
