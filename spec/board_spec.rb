@@ -129,6 +129,23 @@ RSpec.describe Board do
         end.to change { targ_sqr.piece }.from(@piece).to(nil)
       end
     end
+
+    context 'when destination is invalid' do
+      before do
+        target = 'a2'
+        destination = 'a5'
+        board.arrange_pieces
+        board.update_targ_and_dest(target: target, destination: destination)
+        @piece = board.instance_variable_get(:@selected_square).piece
+      end
+
+      it 'does not move piece' do
+        dest_sqr = board.send(:select_square_from_str, 'a5')
+        expect do
+          board.place_piece
+        end.to_not change { dest_sqr.piece }
+      end
+    end
   end
 end
 
