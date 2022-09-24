@@ -54,5 +54,20 @@ RSpec.describe Board do
       end
     end
   end
+
+  describe '#update_targ_and_dest' do
+    before do
+      board.arrange_pieces
+    end
+
+    it 'stores square of target' do
+      target = 'a2'
+      destination = 'a4'
+      targ_sqr = board.square_at_position(Position.for(target))
+      board.update_targ_and_dest(target: target, destination: destination)
+      inner_sel_square = board.instance_variable_get(:@selected_square)
+      expect(inner_sel_square).to eql(targ_sqr)
+    end
+  end
 end
 
