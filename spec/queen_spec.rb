@@ -69,5 +69,13 @@ RSpec.describe Queen do
         expect(piece.symbol).to eql(exp_sym)
       end
     end
+
+    context 'for black queen' do
+      it 'returns the correct symbol' do
+        piece = Piece.for('q')
+        exp_sym = "\u265b"
+        expect(piece.symbol).to eql(exp_sym)
+      end
+    end
   end
 end
