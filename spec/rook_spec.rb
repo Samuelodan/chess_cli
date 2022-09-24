@@ -100,5 +100,15 @@ RSpec.describe Rook do
       end
     end
   end
+
+  describe '#symbol' do
+    context 'for white rook' do
+      it 'returns the correct symbol' do
+        piece = Piece.for('R')
+        exp_sym = "\u2656"
+        expect(piece.symbol).to eql(exp_sym)
+      end
+    end
+  end
 end
 
