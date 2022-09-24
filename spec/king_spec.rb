@@ -69,6 +69,14 @@ RSpec.describe King do
         expect(piece.symbol).to eql(exp_sym)
       end
     end
+
+    context 'for black king' do
+      it 'returns the correct symbol' do
+        piece = Piece.for('k')
+        exp_sym = "\u265a"
+        expect(piece.symbol).to eql(exp_sym)
+      end
+    end
   end
 end
 
