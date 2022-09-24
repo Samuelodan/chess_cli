@@ -68,6 +68,15 @@ RSpec.describe Board do
       inner_sel_square = board.instance_variable_get(:@selected_square)
       expect(inner_sel_square).to eql(targ_sqr)
     end
+
+    it 'stores destination position' do
+      target = 'a2'
+      destination = 'a4'
+      dest_pos = Position.for(destination)
+      board.update_targ_and_dest(target: target, destination: destination)
+      inner_dest_pos = board.instance_variable_get(:@destination_position)
+      expect(inner_dest_pos).to eql(dest_pos)
+    end
   end
 end
 
