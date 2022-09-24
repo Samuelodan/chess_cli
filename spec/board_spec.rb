@@ -151,6 +151,13 @@ RSpec.describe Board do
           board.place_piece
         end.to_not change { @piece.moved? }
       end
+
+      it 'leaves piece position unchanged' do
+        targ_sqr = board.send(:select_square_from_str, 'a2')
+        expect do
+          board.place_piece
+        end.to_not change { targ_sqr.piece }
+      end
     end
   end
 end
