@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative './piece'
 require_relative './board'
 
@@ -21,3 +22,4 @@ class Knight < Piece
     ]
   end
 end
+
