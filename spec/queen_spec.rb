@@ -79,3 +79,4 @@ RSpec.describe Queen do
     end
   end
 end
+
