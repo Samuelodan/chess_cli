@@ -124,3 +124,4 @@ RSpec.describe Pawn do
     end
   end
 end
+
