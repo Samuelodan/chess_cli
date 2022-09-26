@@ -205,7 +205,8 @@ RSpec.describe Board do
 
       it 'replaces it with a black queen' do
         square = board.square_at_position(Position.for('h1'))
-        board.promote_pawn
+        choice = 'q'
+        board.promote_pawn(choice: choice)
         exp_pc_letter = 'q'
         expect(square.piece.letter).to eql(exp_pc_letter)
       end
@@ -219,7 +220,8 @@ RSpec.describe Board do
 
       it 'replaces it with a white queen' do
         square = board.square_at_position(Position.for('g8'))
-        board.promote_pawn
+        choice = 'Q'
+        board.promote_pawn(choice: choice)
         exp_pc_letter = 'Q'
         expect(square.piece.letter).to eql(exp_pc_letter)
       end
@@ -233,7 +235,8 @@ RSpec.describe Board do
 
       it 'replaces it with a white knight' do
         square = board.square_at_position(Position.for('g8'))
-        board.promote_pawn
+        choice = 'N'
+        board.promote_pawn(choice: choice)
         exp_pc_letter = 'N'
         expect(square.piece.letter).to eql(exp_pc_letter)
       end
@@ -247,7 +250,8 @@ RSpec.describe Board do
 
       it 'replaces it with a black rook' do
         square = board.square_at_position(Position.for('h1'))
-        board.promote_pawn
+        choice = 'r'
+        board.promote_pawn(choice: choice)
         exp_pc_letter = 'r'
         expect(square.piece.letter).to eql(exp_pc_letter)
       end
