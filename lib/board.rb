@@ -182,7 +182,30 @@ class Board
     @selected_square.piece = nil
   end
 
+  def can_promote?
+    return true if white_p_in_rank_8?
+    return true if black_p_in_rank_1?
+
+    false
+  end
+
   private
+
+  def white_p_in_rank_8?
+    squares[0].find do |sqr|
+      if sqr.piece
+        sqr.piece.letter == 'P'
+      end
+    end
+  end
+
+  def black_p_in_rank_1?
+    squares[7].find do |sqr|
+      if sqr.piece
+        sqr.piece.letter == 'p'
+      end
+    end
+  end
 
   # update piece position and board
   def update_current_pc_pos_and_board
