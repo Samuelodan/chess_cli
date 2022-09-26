@@ -189,7 +189,24 @@ class Board
     false
   end
 
+  def promote_pawn(choice:)
+    sqr = find_promotable_sqr
+    pawn = sqr.piece
+    pl = pawn.letter
+    letter = pl == pl.upcase ? choice.upcase : choice
+    sqr.piece = Piece.for(letter)
+  end
+
   private
+
+  def find_promotable_sqr
+    square =
+      if white_p_in_rank_8?
+        squares[0].find { |sqr| sqr.piece && sqr.piece.letter == 'P' }
+      elsif black_p_in_rank_1?
+        squares[7].find { |sqr| sqr.piece && sqr.piece.letter == 'p' }
+      end
+  end
 
   def white_p_in_rank_8?
     squares[0].find do |sqr|
@@ -205,6 +222,7 @@ class Board
         sqr.piece.letter == 'p'
       end
     end
+    squares[7].find { |sqr| sqr.piece && sqr.piece.letter == 'p' }
   end
 
   # update piece position and board
