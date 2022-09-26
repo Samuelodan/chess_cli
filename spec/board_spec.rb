@@ -238,6 +238,20 @@ RSpec.describe Board do
         expect(square.piece.letter).to eql(exp_pc_letter)
       end
     end
+
+    context 'for promoting a black pawn at h1 to rook' do
+      before do
+        fen_str = 'rnbqkb1r/1p3pPp/2p2p2/1pR5/N2p3n/2PR4/PPPPP1P1/1NBQKB1p w kq - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'replaces it with a black rook' do
+        square = board.square_at_position(Position.for('h1'))
+        board.promote_pawn
+        exp_pc_letter = 'r'
+        expect(square.piece.letter).to eql(exp_pc_letter)
+      end
+    end
   end
 end
 
