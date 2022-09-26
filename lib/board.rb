@@ -209,20 +209,11 @@ class Board
   end
 
   def white_p_in_rank_8?
-    squares[0].find do |sqr|
-      if sqr.piece
-        sqr.piece.letter == 'P'
-      end
-    end
+    squares[0].any? { |sqr| sqr.piece && sqr.piece.letter == 'P' }
   end
 
   def black_p_in_rank_1?
-    squares[7].find do |sqr|
-      if sqr.piece
-        sqr.piece.letter == 'p'
-      end
-    end
-    squares[7].find { |sqr| sqr.piece && sqr.piece.letter == 'p' }
+    squares[7].any? { |sqr| sqr.piece && sqr.piece.letter == 'p' }
   end
 
   # update piece position and board
