@@ -160,5 +160,18 @@ RSpec.describe Board do
       end
     end
   end
+
+  describe '#can_promote?' do
+    context 'when there is no pawn to promote' do
+      before do
+        fen_str = 'rnbqkb1r/1p2ppPp/2p2p2/1pR5/N2p3n/8/PPPPPP1P/1NBQKB1R w Kkq - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns false' do
+        expect(board.can_promote?).to be false
+      end
+    end
+  end
 end
 
