@@ -172,6 +172,17 @@ RSpec.describe Board do
         expect(board.can_promote?).to be false
       end
     end
+
+    context 'when there is a white pawn to promote' do
+      before do
+        fen_str = 'rnbqkbPr/1p2pp1p/2p2p2/1pR5/N2p3n/8/PPPPPP1P/1NBQKB1R w Kkq - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns true' do
+        expect(board.can_promote?).to be true
+      end
+    end
   end
 end
 
