@@ -86,7 +86,7 @@ RSpec.describe Queen do
         board.arrange_pieces_from_fen(fen_str1)
       end
 
-      it 'd4 bishop has 4 attack moves' do
+      it 'd4 queen has 4 attack moves' do
         pos = Position.for('d4')
         piece = board.square_at_position(pos).piece
         piece.update_position(pos)
@@ -96,7 +96,7 @@ RSpec.describe Queen do
         expect(move_count).to eql(exp_count)
       end
 
-      it 'g5 bishop has 3 attack move' do
+      it 'g5 queen has 3 attack move' do
         pos = Position.for('g5')
         piece = board.square_at_position(pos).piece
         piece.update_position(pos)
