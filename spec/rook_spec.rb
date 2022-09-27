@@ -155,6 +155,16 @@ RSpec.describe Rook do
         exp_count = 3
         expect(move_count).to eql(exp_count)
       end
+
+      it 'a8 rook has zero attack moves' do
+        pos = Position.for('a8')
+        piece = board.square_at_position(pos).piece
+        piece.update_position(pos)
+        piece.update_board(board)
+        move_count = piece.attack_moves.length
+        exp_count = 0
+        expect(move_count).to eql(exp_count)
+      end
     end
   end
 end
