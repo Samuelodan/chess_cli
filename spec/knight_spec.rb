@@ -156,13 +156,13 @@ RSpec.describe Knight do
         expect(move_count).to eql(exp_count)
       end
 
-      it 'b6 knight has zero attack moves' do
+      it 'b6 knight has 1 attack moves' do
         pos = Position.for('b6')
         piece = board.square_at_position(pos).piece
         piece.update_position(pos)
         piece.update_board(board)
         move_count = piece.attack_moves.length
-        exp_count = 0
+        exp_count = 1
         expect(move_count).to eql(exp_count)
       end
     end
