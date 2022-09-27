@@ -79,6 +79,13 @@ class Piece
     result
   end
 
+  def attack_moves
+    valid_moves.select do |pos|
+      current_sqr = board.square_at_position(pos)
+      current_sqr.piece
+    end
+  end
+
   def self.for(letter)
     registry.find do |candidate|
       candidate.handles?(letter.downcase)
