@@ -123,5 +123,24 @@ RSpec.describe Pawn do
       end
     end
   end
+
+  describe '#attack_moves' do
+    context 'for fen string 1' do
+      before do
+        fen_str1 = 'rnbqkbn1/p3pp1p/1N5P/4r3/pppPp3/1P4P1/2PPPP2/R1BQKBNR w KQq - 0 1'
+        board.arrange_pieces_from_fen(fen_str1)
+      end
+
+      it 'b3 bishop has 2 attack moves' do
+        pos = Position.for('b3')
+        piece = board.square_at_position(pos).piece
+        piece.update_position(pos)
+        piece.update_board(board)
+        move_count = piece.attack_moves.length
+        exp_count = 2
+        expect(move_count).to eql(exp_count)
+      end
+    end
+  end
 end
 
