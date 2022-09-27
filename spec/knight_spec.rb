@@ -118,5 +118,24 @@ RSpec.describe Knight do
       end
     end
   end
+
+  describe '#attack_moves' do
+    context 'for fen string 1' do
+      before do
+        fen_str1 = 'r1bqkb1r/pppppppp/1nN5/5P2/P7/N1n5/PPPQP1PP/R1B1KB1R w KQkq - 0 1'
+        board.arrange_pieces_from_fen(fen_str1)
+      end
+
+      it 'c6 knight has 3 attack moves' do
+        pos = Position.for('c6')
+        piece = board.square_at_position(pos).piece
+        piece.update_position(pos)
+        piece.update_board(board)
+        move_count = piece.attack_moves.length
+        exp_count = 3
+        expect(move_count).to eql(exp_count)
+      end
+    end
+  end
 end
 
