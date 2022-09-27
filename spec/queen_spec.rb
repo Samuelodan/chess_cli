@@ -78,5 +78,24 @@ RSpec.describe Queen do
       end
     end
   end
+
+  describe '#attack_moves' do
+    context 'for fen string 1' do
+      before do
+        fen_str1 = 'rnb1kbnr/p2p1ppp/2p1p3/P5q1/1p1Q4/2P5/1PP1PPPP/RNB1KBNR w KQkq - 0 1'
+        board.arrange_pieces_from_fen(fen_str1)
+      end
+
+      it 'd4 bishop has 4 attack moves' do
+        pos = Position.for('d4')
+        piece = board.square_at_position(pos).piece
+        piece.update_position(pos)
+        piece.update_board(board)
+        move_count = piece.attack_moves.length
+        exp_count = 4
+        expect(move_count).to eql(exp_count)
+      end
+    end
+  end
 end
 
