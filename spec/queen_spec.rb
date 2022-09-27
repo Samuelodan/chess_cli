@@ -95,6 +95,16 @@ RSpec.describe Queen do
         exp_count = 4
         expect(move_count).to eql(exp_count)
       end
+
+      it 'g5 bishop has 3 attack move' do
+        pos = Position.for('g5')
+        piece = board.square_at_position(pos).piece
+        piece.update_position(pos)
+        piece.update_board(board)
+        move_count = piece.attack_moves.length
+        exp_count = 3
+        expect(move_count).to eql(exp_count)
+      end
     end
   end
 end
