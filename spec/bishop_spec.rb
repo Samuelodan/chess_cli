@@ -118,5 +118,24 @@ RSpec.describe Bishop do
       end
     end
   end
+
+  describe '#attack_moves' do
+    context 'for fen string 1' do
+      before do
+        fen_str1 = 'rn1qkbnr/p4ppp/bp2p3/p7/1B6/1Pp3PB/P1PPPP1P/RN1QK1NR w KQkq - 0 1'
+        board.arrange_pieces_from_fen(fen_str1)
+      end
+
+      it 'b4 bishop has 3 attack moves' do
+        pos = Position.for('b4')
+        piece = board.square_at_position(pos).piece
+        piece.update_position(pos)
+        piece.update_board(board)
+        move_count = piece.attack_moves.length
+        exp_count = 3
+        expect(move_count).to eql(exp_count)
+      end
+    end
+  end
 end
 
