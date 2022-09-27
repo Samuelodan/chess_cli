@@ -118,5 +118,24 @@ RSpec.describe Rook do
       end
     end
   end
+
+  describe '#attack_moves' do
+    context 'for fen string 1' do
+      before do
+        fen_str1 = 'rnbqkbn1/1ppppppp/7P/3B3r/pR6/8/PPPPPPP1/1NBQK1NR w Kq - 0 1'
+        board.arrange_pieces_from_fen(fen_str1)
+      end
+
+      it 'b4 rook has 2 attack moves' do
+        pos = Position.for('b4')
+        piece = board.square_at_position(pos).piece
+        piece.update_position(pos)
+        piece.update_board(board)
+        move_count = piece.attack_moves.length
+        exp_count = 2
+        expect(move_count).to eql(exp_count)
+      end
+    end
+  end
 end
 
