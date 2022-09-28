@@ -246,5 +246,19 @@ RSpec.describe Board do
       end
     end
   end
+
+  describe '#king_in_check?' do
+    context 'when black king is in check' do
+      before do
+        fen_str = 'rnbqkbnr/p1p1ppp1/3p1N1p/1p6/8/8/PPPPPPPP/R1BQKBNR w KQkq - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns true' do
+        result = board.king_in_check?
+        expect(result).to be true
+      end
+    end
+  end
 end
 
