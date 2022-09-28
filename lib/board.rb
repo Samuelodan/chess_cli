@@ -230,6 +230,10 @@ class Board
     under_attack
   end
 
+  def get_all_white_pieces
+    get_all_pieces.select { |pc| pc.color == :white }
+  end
+
   def get_all_pieces
     pc_array = []
     squares.each do |row|
