@@ -118,8 +118,6 @@ RSpec.describe Pawn do
       it 'b3 bishop has 2 attack moves' do
         pos = Position.for('b3')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
@@ -128,8 +126,6 @@ RSpec.describe Pawn do
       it 'd4 bishop has 1 attack move' do
         pos = Position.for('d4')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
@@ -138,8 +134,6 @@ RSpec.describe Pawn do
       it 'a7 bishop has 1 attack moves' do
         pos = Position.for('a7')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
@@ -148,8 +142,6 @@ RSpec.describe Pawn do
       it 'c4 bishop has 1 attack moves' do
         pos = Position.for('c4')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
