@@ -98,6 +98,7 @@ class Board
   def arrange_pieces
     arrange_black_pieces
     arrange_white_pieces
+    assign_piece_boards
   end
 
   def arrange_pieces_from_fen(full_fen_str)
@@ -110,6 +111,7 @@ class Board
         squares[row_idx][idx].piece = Piece.for(current_fen_char)
       end
     end
+    assign_piece_boards
   end
 
   private
