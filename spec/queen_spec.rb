@@ -15,8 +15,6 @@ RSpec.describe Queen do
       it 'd4 queen has 19 moves' do
         pos = Position.for('d4')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 19
         expect(move_count).to eql(exp_count)
@@ -25,8 +23,6 @@ RSpec.describe Queen do
       it 'g6 queen has 16 moves' do
         pos = Position.for('g6')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 16
         expect(move_count).to eql(exp_count)
@@ -42,8 +38,6 @@ RSpec.describe Queen do
       it 'd3 queen has 14 moves' do
         pos = Position.for('d3')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 14
         expect(move_count).to eql(exp_count)
@@ -52,8 +46,6 @@ RSpec.describe Queen do
       it 'h5 queen has 10 moves' do
         pos = Position.for('h5')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 10
         expect(move_count).to eql(exp_count)
