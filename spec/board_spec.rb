@@ -295,7 +295,7 @@ RSpec.describe Board do
       it 'returns the black king' do
         piece = board.checked_king
         pl = piece.letter
-        expect(result).to eql('k')
+        expect(pl).to eql('k')
       end
     end
 
@@ -308,7 +308,7 @@ RSpec.describe Board do
       it 'returns the white king' do
         piece = board.checked_king
         pl = piece.letter
-        expect(result).to eql('K')
+        expect(pl).to eql('K')
       end
     end
   end
