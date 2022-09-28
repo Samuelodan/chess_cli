@@ -220,6 +220,18 @@ class Board
 
   private
 
+  def pieces_under_attack
+    pieces = get_all_pieces
+    under_attack = []
+    pieces.each do |pc|
+      pc.attack_moves.each do |pos|
+        att_pc = square_at_position(pos).piece
+        under_attack << att_pc
+      end
+    end
+    under_attack
+  end
+
   def find_promotable_sqr
     square =
       if white_p_in_rank_8?
