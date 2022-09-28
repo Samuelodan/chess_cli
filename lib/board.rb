@@ -116,16 +116,6 @@ class Board
 
   private
 
-  def get_all_pieces
-    pc_array = []
-    squares.each do |row|
-      row.each do |sqr|
-        pc_array << sqr.piece if sqr.piece
-      end
-    end
-    pc_array
-  end
-
   def assign_piece_boards
     squares.each do |row|
       row.each do |sqr|
@@ -238,6 +228,16 @@ class Board
       end
     end
     under_attack
+  end
+
+  def get_all_pieces
+    pc_array = []
+    squares.each do |row|
+      row.each do |sqr|
+        pc_array << sqr.piece if sqr.piece
+      end
+    end
+    pc_array
   end
 
   def find_promotable_sqr
