@@ -113,8 +113,6 @@ RSpec.describe Bishop do
       it 'b4 bishop has 3 attack moves' do
         pos = Position.for('b4')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 3
         expect(move_count).to eql(exp_count)
@@ -123,8 +121,6 @@ RSpec.describe Bishop do
       it 'h3 bishop has 1 attack move' do
         pos = Position.for('h3')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
@@ -133,8 +129,6 @@ RSpec.describe Bishop do
       it 'a6 bishop has 1 attack moves' do
         pos = Position.for('a6')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
@@ -143,8 +137,6 @@ RSpec.describe Bishop do
       it 'f8 bishop has 1 attack moves' do
         pos = Position.for('f8')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
