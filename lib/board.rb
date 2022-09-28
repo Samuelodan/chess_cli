@@ -219,9 +219,7 @@ class Board
   end
 
   def king_in_check?
-    pieces_under_attack.any? do |piece|
-      piece.class == King
-    end
+    pieces_under_attack.any? { |piece| piece.class == King }
   end
 
   def checked_king
