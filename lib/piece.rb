@@ -129,6 +129,17 @@ class Piece
     end
   end
 
+  def legal_moves(moves)
+    moves.reject do |pos|
+      dup_brd = board_copy
+      dup_brd.instance_variable_set(:@selected_square, square)
+      dup_brd.instance_variable_set(:@destination_position, pos)
+      dup_brd.instance_variable_set(:@sel_pc_moves, [pos])
+      dup_brd.place_piece
+      true if dup_brd.king_in_check? && dup_brd.checked_king.color == color
+    end
+  end
+
   def board_copy
     Marshal.load(Marshal.dump(board))
   end
