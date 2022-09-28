@@ -129,6 +129,10 @@ class Piece
     end
   end
 
+  def board_copy
+    Marshal.load(Marshal.dump(board))
+  end
+
   def square
     square = nil
     board.squares.each do |row|
