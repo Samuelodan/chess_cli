@@ -284,5 +284,20 @@ RSpec.describe Board do
       end
     end
   end
+
+  describe '#checked_king' do
+    context 'when black king is in check' do
+      before do
+        fen_str = 'rnbqkbnr/p1p1ppp1/3p1N1p/1p6/8/8/PPPPPPPP/R1BQKBNR w KQkq - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns the black king' do
+        piece = board.checked_king
+        pl = piece.letter
+        expect(result).to eql('k')
+      end
+    end
+  end
 end
 
