@@ -19,6 +19,7 @@ class Pawn < Piece
   end
 
   def valid_moves
+    @position = position
     regular_moves = possible_moves.reject do |position|
       current_sqr = board.square_at_position(position)
       current_sqr.piece

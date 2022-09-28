@@ -98,6 +98,7 @@ class Board
   def arrange_pieces
     arrange_black_pieces
     arrange_white_pieces
+    assign_piece_boards
   end
 
   def arrange_pieces_from_fen(full_fen_str)
@@ -110,9 +111,20 @@ class Board
         squares[row_idx][idx].piece = Piece.for(current_fen_char)
       end
     end
+    assign_piece_boards
   end
 
   private
+
+  def assign_piece_boards
+    squares.each do |row|
+      row.each do |sqr|
+        if sqr.piece
+          sqr.piece.update_board(self)
+        end
+      end
+    end
+  end
 
   def arrange_black_pieces
     squares[1].each do |sqr|
@@ -164,7 +176,6 @@ class Board
   def update_targ_and_dest(target:, destination:)
     store_selected_square(target)
     store_dest_position(destination)
-    update_current_pc_pos_and_board
     store_pc_moves
   end
 
@@ -214,13 +225,6 @@ class Board
 
   def black_p_in_rank_1?
     squares[7].any? { |sqr| sqr.piece && sqr.piece.letter == 'p' }
-  end
-
-  # update piece position and board
-  def update_current_pc_pos_and_board
-    sqr_pos = @selected_square.position
-    @selected_square.piece.update_position(sqr_pos)
-    @selected_square.piece.update_board(self)
   end
 
   def select_square_from_str(pos_str)

@@ -15,8 +15,6 @@ RSpec.describe Rook do
       it 'a1 rook has 4 moves' do
         pos = Position.for('a1')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 4
         expect(move_count).to eql(exp_count)
@@ -25,8 +23,6 @@ RSpec.describe Rook do
       it 'e4 rook has 10 moves' do
         pos = Position.for('e4')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 10
         expect(move_count).to eql(exp_count)
@@ -35,8 +31,6 @@ RSpec.describe Rook do
       it 'h5 rook has 10 moves' do
         pos = Position.for('h5')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 10
         expect(move_count).to eql(exp_count)
@@ -45,8 +39,6 @@ RSpec.describe Rook do
       it 'a8 rook has zero moves' do
         pos = Position.for('a8')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 0
         expect(move_count).to eql(exp_count)
@@ -62,8 +54,6 @@ RSpec.describe Rook do
       it 'b3 rook has 5 moves' do
         pos = Position.for('b3')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 5
         expect(move_count).to eql(exp_count)
@@ -72,8 +62,6 @@ RSpec.describe Rook do
       it 'e4 rook has 8 moves' do
         pos = Position.for('e4')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 8
         expect(move_count).to eql(exp_count)
@@ -82,8 +70,6 @@ RSpec.describe Rook do
       it 'f5 rook has 6 moves' do
         pos = Position.for('f5')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 6
         expect(move_count).to eql(exp_count)
@@ -92,8 +78,6 @@ RSpec.describe Rook do
       it 'a6 rook has 8 moves' do
         pos = Position.for('a6')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 8
         expect(move_count).to eql(exp_count)
@@ -129,8 +113,6 @@ RSpec.describe Rook do
       it 'b4 rook has 2 attack moves' do
         pos = Position.for('b4')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
@@ -139,8 +121,6 @@ RSpec.describe Rook do
       it 'h1 rook has 1 attack move' do
         pos = Position.for('h1')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
@@ -149,8 +129,6 @@ RSpec.describe Rook do
       it 'h5 rook has 3 attack moves' do
         pos = Position.for('h5')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 3
         expect(move_count).to eql(exp_count)
@@ -159,8 +137,6 @@ RSpec.describe Rook do
       it 'a8 rook has zero attack moves' do
         pos = Position.for('a8')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 0
         expect(move_count).to eql(exp_count)

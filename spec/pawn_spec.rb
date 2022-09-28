@@ -15,8 +15,6 @@ RSpec.describe Pawn do
       it 'h2 pawn has 2 moves' do
         pos = Position.for('h2')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
@@ -26,8 +24,6 @@ RSpec.describe Pawn do
         pos = Position.for('g3')
         piece = board.square_at_position(pos).piece
         piece.moved
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
@@ -36,8 +32,6 @@ RSpec.describe Pawn do
       it 'd2 pawn has 1 moves' do
         pos = Position.for('d2')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
@@ -47,8 +41,6 @@ RSpec.describe Pawn do
         pos = Position.for('a5')
         piece = board.square_at_position(pos).piece
         piece.moved
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
@@ -58,8 +50,6 @@ RSpec.describe Pawn do
         pos = Position.for('c6')
         piece = board.square_at_position(pos).piece
         piece.moved
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 0
         expect(move_count).to eql(exp_count)
@@ -68,8 +58,6 @@ RSpec.describe Pawn do
       it 'f7 pawn has 2 moves' do
         pos = Position.for('f7')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
@@ -86,8 +74,6 @@ RSpec.describe Pawn do
         pos = Position.for('b5')
         piece = board.square_at_position(pos).piece
         piece.moved
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
@@ -97,8 +83,6 @@ RSpec.describe Pawn do
         pos = Position.for('g3')
         piece = board.square_at_position(pos).piece
         piece.moved
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.valid_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
@@ -134,8 +118,6 @@ RSpec.describe Pawn do
       it 'b3 bishop has 2 attack moves' do
         pos = Position.for('b3')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
@@ -144,8 +126,6 @@ RSpec.describe Pawn do
       it 'd4 bishop has 1 attack move' do
         pos = Position.for('d4')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
@@ -154,8 +134,6 @@ RSpec.describe Pawn do
       it 'a7 bishop has 1 attack moves' do
         pos = Position.for('a7')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
@@ -164,8 +142,6 @@ RSpec.describe Pawn do
       it 'c4 bishop has 1 attack moves' do
         pos = Position.for('c4')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
