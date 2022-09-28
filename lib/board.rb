@@ -218,6 +218,12 @@ class Board
     sqr.piece = Piece.for(letter)
   end
 
+  def king_in_check?
+    pieces_under_attack.any? do |piece|
+      piece.class == King
+    end
+  end
+
   private
 
   def pieces_under_attack
