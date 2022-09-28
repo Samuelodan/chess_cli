@@ -176,7 +176,6 @@ class Board
   def update_targ_and_dest(target:, destination:)
     store_selected_square(target)
     store_dest_position(destination)
-    update_current_pc_pos_and_board
     store_pc_moves
   end
 
@@ -226,13 +225,6 @@ class Board
 
   def black_p_in_rank_1?
     squares[7].any? { |sqr| sqr.piece && sqr.piece.letter == 'p' }
-  end
-
-  # update piece position and board
-  def update_current_pc_pos_and_board
-    sqr_pos = @selected_square.position
-    @selected_square.piece.update_position(sqr_pos)
-    @selected_square.piece.update_board(self)
   end
 
   def select_square_from_str(pos_str)
