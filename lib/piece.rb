@@ -77,6 +77,11 @@ class Piece
     end
   end
 
+  def valid_moves
+    @position = position
+    moves_without_own_piece
+  end
+
   def handle_collision(pos_arrays)
     return pos_arrays unless pos_arrays.nested?
 
@@ -113,6 +118,15 @@ class Piece
 
   def self.inherited(candidate)
     register(candidate)
+  end
+
+  private
+
+  def moves_without_own_piece
+    possible_moves.reject do |position|
+      current_sqr = board.square_at_position(position)
+      current_sqr.piece && current_sqr.piece.color == color
+    end
   end
 end
 
