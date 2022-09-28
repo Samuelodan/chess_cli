@@ -114,6 +114,16 @@ class Board
 
   private
 
+  def assign_piece_boards
+    squares.each do |row|
+      row.each do |sqr|
+        if sqr.piece
+          sqr.piece.update_board(self)
+        end
+      end
+    end
+  end
+
   def arrange_black_pieces
     squares[1].each do |sqr|
       sqr.piece = Piece.for('p')
