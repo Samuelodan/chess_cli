@@ -224,6 +224,10 @@ class Board
     end
   end
 
+  def checked_king
+    pieces_under_attack.find { |piece| piece.class == King }
+  end
+
   private
 
   def pieces_under_attack
