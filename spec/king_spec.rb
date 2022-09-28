@@ -81,8 +81,6 @@ RSpec.describe King do
       it 'e4 king has 3 attack moves' do
         pos = Position.for('e4')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 3
         expect(move_count).to eql(exp_count)
@@ -91,8 +89,6 @@ RSpec.describe King do
       it 'a5 king has 1 attack move' do
         pos = Position.for('a5')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
