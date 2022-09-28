@@ -39,6 +39,16 @@ class Piece
     @board = board
   end
 
+  def position
+    square = nil
+    board.squares.each do |row|
+      row.each do |sqr|
+        square = sqr if sqr.piece && sqr.piece == self
+      end
+    end
+    square.position
+  end
+
   def possible_moves
     moves_array = []
     directions.each do |dir_list|
