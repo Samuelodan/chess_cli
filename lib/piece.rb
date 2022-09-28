@@ -128,5 +128,15 @@ class Piece
       current_sqr.piece && current_sqr.piece.color == color
     end
   end
+
+  def square
+    square = nil
+    board.squares.each do |row|
+      row.each do |sqr|
+        square = sqr if sqr.piece && sqr.piece == self
+      end
+    end
+    square
+  end
 end
 
