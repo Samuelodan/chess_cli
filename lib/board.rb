@@ -234,6 +234,10 @@ class Board
     get_all_pieces.select { |pc| pc.color == :white }
   end
 
+  def get_all_black_pieces
+    get_all_pieces.select { |pc| pc.color == :black }
+  end
+
   def get_all_pieces
     pc_array = []
     squares.each do |row|
