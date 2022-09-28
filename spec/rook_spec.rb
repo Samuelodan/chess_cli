@@ -113,8 +113,6 @@ RSpec.describe Rook do
       it 'b4 rook has 2 attack moves' do
         pos = Position.for('b4')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
@@ -123,8 +121,6 @@ RSpec.describe Rook do
       it 'h1 rook has 1 attack move' do
         pos = Position.for('h1')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
@@ -133,8 +129,6 @@ RSpec.describe Rook do
       it 'h5 rook has 3 attack moves' do
         pos = Position.for('h5')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 3
         expect(move_count).to eql(exp_count)
@@ -143,8 +137,6 @@ RSpec.describe Rook do
       it 'a8 rook has zero attack moves' do
         pos = Position.for('a8')
         piece = board.square_at_position(pos).piece
-        piece.update_position(pos)
-        piece.update_board(board)
         move_count = piece.attack_moves.length
         exp_count = 0
         expect(move_count).to eql(exp_count)
