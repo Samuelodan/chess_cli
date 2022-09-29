@@ -148,5 +148,22 @@ RSpec.describe Pawn do
       end
     end
   end
+
+  describe '#legal_moves' do
+    context 'for fen string 1' do
+      before do
+        fen_str1 = '8/3q4/4k3/8/2P3P1/7B/8/3K4 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str1)
+      end
+
+      it 'c4 pawn has zero moves' do
+        pos = Position.for('c4')
+        piece = board.square_at_position(pos).piece
+        move_count = piece.legal_moves.length
+        exp_count = 0
+        expect(move_count).to eql(exp_count)
+      end
+    end
+  end
 end
 
