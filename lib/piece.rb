@@ -92,6 +92,18 @@ class Piece
     end
   end
 
+  def legal_moves
+    valid_moves.reject do |pos|
+      dup_brd = board_copy
+      sqr = dup_brd.square_at_position(position)
+      dup_brd.instance_variable_set(:@selected_square, sqr)
+      dup_brd.instance_variable_set(:@destination_position, pos)
+      dup_brd.instance_variable_set(:@sel_pc_moves, [pos])
+      dup_brd.place_piece
+      dup_brd.king_in_check? && dup_brd.checked_king.color == color
+    end
+  end
+
   def self.for(letter)
     registry.find do |candidate|
       candidate.handles?(letter.downcase)
@@ -116,17 +128,6 @@ class Piece
     possible_moves.reject do |position|
       current_sqr = board.square_at_position(position)
       current_sqr.piece && current_sqr.piece.color == color
-    end
-  end
-
-  def legal_moves(moves)
-    moves.reject do |pos|
-      dup_brd = board_copy
-      dup_brd.instance_variable_set(:@selected_square, square)
-      dup_brd.instance_variable_set(:@destination_position, pos)
-      dup_brd.instance_variable_set(:@sel_pc_moves, [pos])
-      dup_brd.place_piece
-      true if dup_brd.king_in_check? && dup_brd.checked_king.color == color
     end
   end
 
