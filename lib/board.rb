@@ -279,7 +279,7 @@ class Board
 
   def store_pc_moves
     pc = @selected_square.piece
-    @sel_pc_moves = pc.valid_moves
+    @sel_pc_moves = pc.legal_moves
   end
 end
 
