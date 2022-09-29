@@ -163,6 +163,14 @@ RSpec.describe Pawn do
         exp_count = 0
         expect(move_count).to eql(exp_count)
       end
+
+      it 'g4 pawn has zero moves' do
+        pos = Position.for('g4')
+        piece = board.square_at_position(pos).piece
+        move_count = piece.legal_moves.length
+        exp_count = 0
+        expect(move_count).to eql(exp_count)
+      end
     end
   end
 end
