@@ -69,16 +69,6 @@ class Piece
 
   def valid_moves
     @position = position
-    possible_moves.reject do |position|
-      current_sqr = board.square_at_position(position)
-      if current_sqr.piece
-        current_sqr.piece.color == color
-      end
-    end
-  end
-
-  def valid_moves
-    @position = position
     moves_without_own_piece
   end
 
