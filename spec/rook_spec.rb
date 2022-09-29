@@ -159,6 +159,21 @@ RSpec.describe Rook do
         expect(move_count).to eql(exp_count)
       end
     end
+
+    context 'for fen string 2' do
+      before do
+        fen_str2 = '2k5/8/8/Q2r4/6B1/8/8/8 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str2)
+      end
+
+      it 'd5 rook has 2 moves' do
+        pos = Position.for('d5')
+        piece = board.square_at_position(pos).piece
+        move_count = piece.legal_moves.length
+        exp_count = 2
+        expect(move_count).to eql(exp_count)
+      end
+    end
   end
 end
 
