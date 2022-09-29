@@ -172,6 +172,22 @@ RSpec.describe Pawn do
         expect(move_count).to eql(exp_count)
       end
     end
+
+    context 'for fen string 1' do
+      before do
+        fen_str1 = '8/3q4/8/4k3/3P2P1/7B/8/3K4 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str1)
+      end
+
+      it '(already moved) d4 pawn has 1 moves' do
+        pos = Position.for('d4')
+        piece = board.square_at_position(pos).piece
+        piece.moved
+        move_count = piece.legal_moves.length
+        exp_count = 1
+        expect(move_count).to eql(exp_count)
+      end
+    end
   end
 end
 
