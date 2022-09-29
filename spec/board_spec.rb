@@ -5,7 +5,7 @@ require_relative '../lib/board'
 RSpec.describe Board do
   subject(:board) { described_class.new }
 
-  describe '#is_move_valid?' do
+  describe '#is_move_legal?' do
     context "when destination is not among piece's moves" do
       before do
         board.arrange_pieces
@@ -16,7 +16,7 @@ RSpec.describe Board do
       end
 
       it 'returns false' do
-        result = board.is_move_valid?
+        result = board.is_move_legal?
         expect(result).to be false
       end
     end
@@ -31,7 +31,7 @@ RSpec.describe Board do
       end
 
       it 'returns true' do
-        result = board.is_move_valid?
+        result = board.is_move_legal?
         expect(result).to be true
       end
     end
