@@ -20,11 +20,8 @@ class Pawn < Piece
 
   def pseudolegal_moves
     @position = position
-    regular_moves = possible_moves.reject do |position|
-      current_sqr = board.square_at_position(position)
-      current_sqr.piece
-    end
-    regular_moves + @attack_positions
+    unfiltered_moves = handle_pawn_collision(possible_moves)
+    moves_without_piece(unfiltered_moves) + @attack_positions
   end
 
   private
@@ -32,6 +29,22 @@ class Pawn < Piece
   def directions
     return white_pawn_moves if color == :white
     return black_pawn_moves if color == :black
+  end
+
+  def handle_pawn_collision(moves)
+    result = []
+    moves.each do |pos|
+      break if board.square_at_position(pos).piece
+      result << pos
+    end
+    result
+  end
+
+  def moves_without_piece(moves)
+    moves.reject do |pos|
+      current_sqr = board.square_at_position(pos)
+      current_sqr.piece
+    end
   end
 
   def white_pawn_moves

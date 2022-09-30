@@ -216,7 +216,52 @@ class Board
     pieces_under_attack.find { |piece| piece.class == King }
   end
 
+  def checkmate?
+    moves_by_color = {
+      white: :all_white_legal_moves,
+      black: :all_black_legal_moves
+    }
+    if king_in_check?
+      moves = self.send(moves_by_color[checked_king.color])
+      return true if moves.empty?
+    end
+    false
+  end
+
+  def stalemate?
+    moves_by_color = [:all_white_legal_moves, :all_black_legal_moves]
+
+    unless king_in_check?
+      return true if moves_by_color.any? do |move_list|
+        self.send(move_list).empty?
+      end
+    end
+    false
+  end
+
   private
+
+  def all_white_legal_moves
+    pieces = get_all_white_pieces
+    total_moves = []
+    pieces.each do |pc|
+      pc.legal_moves.each do |pos|
+        total_moves << pos
+      end
+    end
+    total_moves
+  end
+
+  def all_black_legal_moves
+    pieces = get_all_black_pieces
+    total_moves = []
+    pieces.each do |pc|
+      pc.legal_moves.each do |pos|
+        total_moves << pos
+      end
+    end
+    total_moves
+  end
 
   def pieces_under_attack
     pieces = get_all_pieces

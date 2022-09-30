@@ -312,5 +312,86 @@ RSpec.describe Board do
       end
     end
   end
+
+  describe '#checkmate?' do
+    context 'when black king is checkmated' do
+      before do
+        fen_str = '3R2k1/5ppp/8/8/8/8/5PPP/6K1 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns true' do
+        expect(board.checkmate?).to be true
+      end
+    end
+
+    context 'when white king is checkmated' do
+      before do
+        fen_str = '1k6/8/8/8/6b1/2q5/8/3K4 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns true' do
+        expect(board.checkmate?).to be true
+      end
+    end
+
+    context 'when there is a check but no mate' do
+      before do
+        fen_str = '5rk1/7B/8/6N1/8/B7/8/6K1 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns false' do
+        expect(board.checkmate?).to be false
+      end
+    end
+
+    context 'when there is a stalemate' do
+      before do
+        fen_str = '5rk1/8/8/6N1/B7/2B5/8/6K1 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns false' do
+        expect(board.checkmate?).to be false
+      end
+    end
+  end
+
+  describe '#stalemate?' do
+    context 'when black king is stalemated' do
+      before do
+        fen_str = '6k1/7r/8/r7/8/8/8/5qk1 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns true' do
+        expect(board.stalemate?).to be true
+      end
+    end
+
+    context 'when white king is stalemated' do
+      before do
+        fen_str = '4k3/7b/8/8/8/p7/P7/K7 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns true' do
+        expect(board.stalemate?).to be true
+      end
+    end
+
+    context 'when there is no stalemate' do
+      before do
+        fen_str = '4k3/8/8/7b/8/p7/P7/K4Q2 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns false' do
+        expect(board.stalemate?).to be false
+      end
+    end
+  end
 end
 
