@@ -324,6 +324,17 @@ RSpec.describe Board do
         expect(board.checkmate?).to be true
       end
     end
+
+    context 'when white king is checkmated' do
+      before do
+        fen_str = '1k6/8/8/8/6b1/2q5/8/3K4 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns true' do
+        expect(board.checkmate?).to be true
+      end
+    end
   end
 end
 
