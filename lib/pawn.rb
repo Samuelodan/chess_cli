@@ -34,6 +34,15 @@ class Pawn < Piece
     return black_pawn_moves if color == :black
   end
 
+  def handle_pawn_collision(moves)
+    result = []
+    moves.each do |pos|
+      break if board.square_at_position(pos).piece
+      result << pos
+    end
+    result
+  end
+
   def white_pawn_moves
     @attack_positions.clear
     @attack_positions << @position.top_right if enemy_at_top_right?
