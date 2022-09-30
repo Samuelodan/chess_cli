@@ -381,6 +381,17 @@ RSpec.describe Board do
         expect(board.stalemate?).to be true
       end
     end
+
+    context 'when there is no stalemate' do
+      before do
+        fen_str = '4k3/8/8/7b/8/p7/P7/K4Q2 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns false' do
+        expect(board.stalemate?).to be false
+      end
+    end
   end
 end
 
