@@ -358,5 +358,18 @@ RSpec.describe Board do
       end
     end
   end
+
+  describe '#stalemate?' do
+    context 'when black king is stalemated' do
+      before do
+        fen_str = '6k1/7r/8/r7/8/8/8/5qk1 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns true' do
+        expect(board.stalemate?).to be true
+      end
+    end
+  end
 end
 
