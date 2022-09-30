@@ -229,6 +229,17 @@ class Board
     total_moves
   end
 
+  def all_black_legal_moves
+    pieces = get_all_black_pieces
+    total_moves = []
+    pieces.each do |pc|
+      pc.legal_moves.each do |pos|
+        total_moves << pos
+      end
+    end
+    total_moves
+  end
+
   def pieces_under_attack
     pieces = get_all_pieces
     under_attack = []
