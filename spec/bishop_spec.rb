@@ -143,5 +143,22 @@ RSpec.describe Bishop do
       end
     end
   end
+
+  describe '#legal_moves' do
+    context 'for fen string 1' do
+      before do
+        fen_str1 = '3k4/3b4/8/8/R3n3/8/3R4/8 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str1)
+      end
+
+      it 'd7 bishop has zero moves' do
+        pos = Position.for('d7')
+        piece = board.square_at_position(pos).piece
+        move_count = piece.legal_moves.length
+        exp_count = 0
+        expect(move_count).to eql(exp_count)
+      end
+    end
+  end
 end
 
