@@ -95,5 +95,22 @@ RSpec.describe Queen do
       end
     end
   end
+
+  describe '#legal_moves' do
+    context 'for fen string 1' do
+      before do
+        fen_str1 = '8/8/8/8/4Q3/2n5/8/1K6 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str1)
+      end
+
+      it 'e4 queen has zero moves' do
+        pos = Position.for('e4')
+        piece = board.square_at_position(pos).piece
+        move_count = piece.legal_moves.length
+        exp_count = 0
+        expect(move_count).to eql(exp_count)
+      end
+    end
+  end
 end
 
