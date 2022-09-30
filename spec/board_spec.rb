@@ -346,6 +346,17 @@ RSpec.describe Board do
         expect(board.checkmate?).to be false
       end
     end
+
+    context 'when there is a stalemate' do
+      before do
+        fen_str = '5rk1/8/8/6N1/B7/2B5/8/6K1 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns false' do
+        expect(board.checkmate?).to be false
+      end
+    end
   end
 end
 
