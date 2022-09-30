@@ -43,6 +43,13 @@ class Pawn < Piece
     result
   end
 
+  def moves_without_piece(moves)
+    moves.reject do |pos|
+      current_sqr = board.square_at_position(pos)
+      current_sqr.piece
+    end
+  end
+
   def white_pawn_moves
     @attack_positions.clear
     @attack_positions << @position.top_right if enemy_at_top_right?
