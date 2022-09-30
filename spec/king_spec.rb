@@ -5,7 +5,7 @@ require_relative '../lib/king'
 RSpec.describe King do
   let(:board) { Board.new }
 
-  describe '#valid_moves' do
+  describe '#pseudolegal_moves' do
     context 'for fen string 1' do
       before do
         fen_str1 = 'rnbq1bnr/pppppppp/k7/8/5K2/6P1/PPPPPP1P/RNBQ1BNR w HAha - 0 1'
@@ -15,7 +15,7 @@ RSpec.describe King do
       it 'f4 king has 7 moves' do
         pos = Position.for('f4')
         piece = board.square_at_position(pos).piece
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 7
         expect(move_count).to eql(exp_count)
       end
@@ -23,7 +23,7 @@ RSpec.describe King do
       it 'a6 king has 3 moves' do
         pos = Position.for('a6')
         piece = board.square_at_position(pos).piece
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 3
         expect(move_count).to eql(exp_count)
       end
@@ -38,7 +38,7 @@ RSpec.describe King do
       it 'f4 king has 6 moves' do
         pos = Position.for('f4')
         piece = board.square_at_position(pos).piece
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 6
         expect(move_count).to eql(exp_count)
       end
@@ -46,7 +46,7 @@ RSpec.describe King do
       it 'b5 king has 8 moves' do
         pos = Position.for('b5')
         piece = board.square_at_position(pos).piece
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 8
         expect(move_count).to eql(exp_count)
       end
