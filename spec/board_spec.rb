@@ -373,7 +373,7 @@ RSpec.describe Board do
 
     context 'when white king is stalemated' do
       before do
-        fen_str = '4k3/7b/8/8/8/p7/P7/K4Q2 w - - 0 1'
+        fen_str = '4k3/7b/8/8/8/p7/P7/K7 w - - 0 1'
         board.arrange_pieces_from_fen(fen_str)
       end
 
