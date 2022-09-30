@@ -20,11 +20,8 @@ class Pawn < Piece
 
   def pseudolegal_moves
     @position = position
-    regular_moves = possible_moves.reject do |position|
-      current_sqr = board.square_at_position(position)
-      current_sqr.piece
-    end
-    regular_moves + @attack_positions
+    unfiltered_moves = handle_pawn_collision(possible_moves)
+    moves_without_piece(unfiltered_moves) + @attack_positions
   end
 
   private
