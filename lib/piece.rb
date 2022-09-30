@@ -67,7 +67,7 @@ class Piece
     end
   end
 
-  def valid_moves
+  def pseudolegal_moves
     @position = position
     moves_without_own_piece
   end
@@ -86,14 +86,14 @@ class Piece
   end
 
   def attack_moves
-    valid_moves.select do |pos|
+    pseudolegal_moves.select do |pos|
       current_sqr = board.square_at_position(pos)
       current_sqr.piece
     end
   end
 
   def legal_moves
-    valid_moves.reject do |pos|
+    pseudolegal_moves.reject do |pos|
       dup_brd = board_copy
       sqr = dup_brd.square_at_position(position)
       dup_brd.instance_variable_set(:@selected_square, sqr)
