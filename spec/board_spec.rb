@@ -370,6 +370,17 @@ RSpec.describe Board do
         expect(board.stalemate?).to be true
       end
     end
+
+    context 'when white king is stalemated' do
+      before do
+        fen_str = '4k3/7b/8/8/8/p7/P7/K4Q2 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+      end
+
+      it 'returns true' do
+        expect(board.stalemate?).to be true
+      end
+    end
   end
 end
 
