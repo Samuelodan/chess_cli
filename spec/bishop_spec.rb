@@ -5,7 +5,7 @@ require_relative '../lib/rook'
 RSpec.describe Bishop do
   let(:board) { Board.new }
 
-  describe '#valid_moves' do
+  describe '#pseudolegal_moves' do
     context 'for fen string 1' do
       before do
         fen_str1 = 'rnbqk1nr/pppppp1p/7b/8/5p2/2B1P3/PPPP1PPP/RN1QKBNR w KQkq - 0 1'
@@ -15,7 +15,7 @@ RSpec.describe Bishop do
       it 'c3 bishop has 7 moves' do
         pos = Position.for('c3')
         piece = board.square_at_position(pos).piece
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 7
         expect(move_count).to eql(exp_count)
       end
@@ -23,7 +23,7 @@ RSpec.describe Bishop do
       it 'f1 bishop has 5 moves' do
         pos = Position.for('f1')
         piece = board.square_at_position(pos).piece
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 5
         expect(move_count).to eql(exp_count)
       end
@@ -31,7 +31,7 @@ RSpec.describe Bishop do
       it 'h6 bishop has 3 moves' do
         pos = Position.for('h6')
         piece = board.square_at_position(pos).piece
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 3
         expect(move_count).to eql(exp_count)
       end
@@ -39,7 +39,7 @@ RSpec.describe Bishop do
       it 'c8 bishop has zero moves' do
         pos = Position.for('c8')
         piece = board.square_at_position(pos).piece
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 0
         expect(move_count).to eql(exp_count)
       end
@@ -54,7 +54,7 @@ RSpec.describe Bishop do
       it 'd3 bishop has 9 moves' do
         pos = Position.for('d3')
         piece = board.square_at_position(pos).piece
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 9
         expect(move_count).to eql(exp_count)
       end
@@ -62,7 +62,7 @@ RSpec.describe Bishop do
       it 'f3 bishop has 8 moves' do
         pos = Position.for('f3')
         piece = board.square_at_position(pos).piece
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 8
         expect(move_count).to eql(exp_count)
       end
@@ -70,7 +70,7 @@ RSpec.describe Bishop do
       it 'd4 bishop has 7 moves' do
         pos = Position.for('d4')
         piece = board.square_at_position(pos).piece
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 7
         expect(move_count).to eql(exp_count)
       end
@@ -78,7 +78,7 @@ RSpec.describe Bishop do
       it 'd6 bishop has 7 moves' do
         pos = Position.for('d6')
         piece = board.square_at_position(pos).piece
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 7
         expect(move_count).to eql(exp_count)
       end
