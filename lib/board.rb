@@ -228,6 +228,17 @@ class Board
     false
   end
 
+  def stalemate?
+    moves_by_color = [:all_white_legal_moves, :all_black_legal_moves]
+
+    unless king_in_check?
+      return true if moves_by_color.any? do |move_list|
+        self.send(move_list).empty?
+      end
+    end
+    false
+  end
+
   private
 
   def all_white_legal_moves
