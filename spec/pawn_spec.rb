@@ -5,7 +5,7 @@ require_relative '../lib/pawn'
 RSpec.describe Pawn do
   let(:board) { Board.new }
 
-  describe '#valid_moves' do
+  describe '#pseudolegal_moves' do
     context 'for fen string 1' do
       before do
         fen_str1 = 'rnbqkb1r/1p2pppp/2p5/p1R5/1N1p1n2/6P1/PPPPPP1P/1NBQKB1R w Kkq - 0 1'
@@ -15,7 +15,7 @@ RSpec.describe Pawn do
       it 'h2 pawn has 2 moves' do
         pos = Position.for('h2')
         piece = board.square_at_position(pos).piece
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
       end
@@ -24,7 +24,7 @@ RSpec.describe Pawn do
         pos = Position.for('g3')
         piece = board.square_at_position(pos).piece
         piece.moved
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
       end
@@ -32,7 +32,7 @@ RSpec.describe Pawn do
       it 'd2 pawn has 1 moves' do
         pos = Position.for('d2')
         piece = board.square_at_position(pos).piece
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
       end
@@ -41,7 +41,7 @@ RSpec.describe Pawn do
         pos = Position.for('a5')
         piece = board.square_at_position(pos).piece
         piece.moved
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
       end
@@ -50,7 +50,7 @@ RSpec.describe Pawn do
         pos = Position.for('c6')
         piece = board.square_at_position(pos).piece
         piece.moved
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 0
         expect(move_count).to eql(exp_count)
       end
@@ -58,7 +58,7 @@ RSpec.describe Pawn do
       it 'f7 pawn has 2 moves' do
         pos = Position.for('f7')
         piece = board.square_at_position(pos).piece
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
       end
@@ -74,7 +74,7 @@ RSpec.describe Pawn do
         pos = Position.for('b5')
         piece = board.square_at_position(pos).piece
         piece.moved
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
       end
@@ -83,7 +83,7 @@ RSpec.describe Pawn do
         pos = Position.for('g3')
         piece = board.square_at_position(pos).piece
         piece.moved
-        move_count = piece.valid_moves.length
+        move_count = piece.pseudolegal_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
       end
