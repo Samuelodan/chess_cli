@@ -179,12 +179,12 @@ class Board
     store_pc_moves
   end
 
-  def is_move_valid?
+  def is_move_legal?
     @sel_pc_moves.include?(@destination_position)
   end
 
   def place_piece
-    return unless is_move_valid?
+    return unless is_move_legal?
 
     current_pc = @selected_square.piece
     dest_square = square_at_position(@destination_position)
@@ -279,7 +279,7 @@ class Board
 
   def store_pc_moves
     pc = @selected_square.piece
-    @sel_pc_moves = pc.valid_moves
+    @sel_pc_moves = pc.legal_moves
   end
 end
 
