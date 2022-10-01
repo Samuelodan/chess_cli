@@ -3,8 +3,8 @@
 class Player
   attr_reader :name
 
-  def initialize(name:)
-    @name = name
+  def initialize
+    @name = nil
   end
 
   def set_name(name)
