@@ -3,7 +3,7 @@
 require_relative './board'
 require_relative './player'
 
-class Game do
+class ChessGame do
   attr_reader :board, :player1, :player2, :current_player
 
   def initialize(
