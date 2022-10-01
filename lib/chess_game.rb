@@ -4,6 +4,8 @@ require_relative './board'
 require_relative './player'
 
 class Game do
+  attr_reader :board, :player1, :player2, :current_player
+
   def initialize(
     board: Board.new
     player1: Player.new
