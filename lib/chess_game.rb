@@ -3,14 +3,12 @@
 require_relative './board'
 require_relative './player'
 
-class ChessGame do
+class ChessGame
   attr_reader :board, :player1, :player2, :current_player
 
-  def initialize(
-    board: Board.new
-    player1: Player.new
-    player2: Player.new
-  )
+  def initialize(board: Board.new,
+                 player1: Player.new,
+                 player2: Player.new)
     @board = board
     @player1 = player1
     @player2 = player2
