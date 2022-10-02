@@ -20,6 +20,18 @@ RSpec.describe ChessGame do
         end.to change { chess_game.current_player }.to(player2)
       end
     end
+
+    context 'when current player is player2' do
+      before do
+        chess_game.instance_variable_set(:@current_player, player2)
+      end
+
+      it 'changes @current_player to player1' do
+        expect do
+          chess_game.change_turn
+        end.to change { chess_game.current_player }.to(player1)
+      end
+    end
   end
 end
 
