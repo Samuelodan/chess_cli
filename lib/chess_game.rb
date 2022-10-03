@@ -43,6 +43,11 @@ class ChessGame
     gets.chomp
   end
 
+  def assign_names
+    player1.set_name(collect_name(player_no: 'Player1'))
+    player2.set_name(collect_name(player_no: 'Player2'))
+  end
+
   def collect_name(player_no:)
     system('clear')
     print "#{player_no}, enter your name\n\n >> "
