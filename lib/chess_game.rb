@@ -22,5 +22,23 @@ class ChessGame
       @current_player = player1
     end
   end
+
+  def introduction
+    system('clear')
+    puts <<~HEREDOC
+      W E L C O M E  TO  C H E S S (C L I)
+
+      THIS IS PRETTY MUCH THE SAME GAME YOU KNOW (AND LOVE? HA HA!)
+      THE MAIN DIFFERENCE IS YOU USE ALGEBRAIC NOTATION TO MOVE PIECES
+      SO, "a2a4" MEANS "MOVE THE PIECE AT A2 TO A4." IT MIGHT SEEM
+      WEIRD AT FIRST BUT IT'LL FEEL NATURAL MUCH SOONER THAN YOU EXPECT.
+
+      ALRIGHT, ENOUGH SAID, LET THE GAME BEGIN
+
+      enter any key to continue...\n
+    HEREDOC
+    print '>> '
+    gets.chomp
+  end
 end
 
