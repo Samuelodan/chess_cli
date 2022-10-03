@@ -23,6 +23,8 @@ class ChessGame
     end
   end
 
+  private
+
   def introduction
     system('clear')
     puts <<~HEREDOC
@@ -38,6 +40,12 @@ class ChessGame
       enter any key to continue...\n
     HEREDOC
     print '>> '
+    gets.chomp
+  end
+
+  def collect_name(player_no:)
+    system('clear')
+    print "#{player_no}, enter your name\n\n >> "
     gets.chomp
   end
 end
