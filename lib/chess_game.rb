@@ -43,6 +43,11 @@ class ChessGame
     gets.chomp
   end
 
+  def assign_colors
+    player1.set_color(:white)
+    player2.set_color(:black)
+  end
+
   def assign_names
     player1.set_name(collect_name(player_no: 'Player1'))
     player2.set_name(collect_name(player_no: 'Player2'))
