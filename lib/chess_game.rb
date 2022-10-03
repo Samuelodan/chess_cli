@@ -28,6 +28,14 @@ class ChessGame
     assign_colors
   end
 
+  def prompt_move
+    puts <<~HEREDOC
+      #{current_player.name}, move your piece by entering the positions like
+      so, 'c4e6' without the quotes
+
+    HEREDOC
+  end
+
   private
 
   def introduction
