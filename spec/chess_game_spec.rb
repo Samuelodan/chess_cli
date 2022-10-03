@@ -46,6 +46,12 @@ RSpec.describe ChessGame do
       expect(player2).to receive(:set_name).with('name2')
       chess_game.assign_player_attributes
     end
+
+    it 'sends #set_color to both players', :aggregate_failures do
+      expect(player1).to receive(:set_color).with(:white)
+      expect(player2).to receive(:set_color).with(:black)
+      chess_game.assign_player_attributes
+    end
   end
 end
 
