@@ -12,5 +12,13 @@ RSpec.describe Player do
       expect(player.name).to eql(name)
     end
   end
+
+  describe '#set_color' do
+    it 'assigns the argument to @color' do
+      color = :white
+      player.set_color(color)
+      expect(player.color).to eql(color)
+    end
+  end
 end
 
