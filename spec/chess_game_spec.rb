@@ -33,5 +33,19 @@ RSpec.describe ChessGame do
       end
     end
   end
+
+  describe '#assign_player_attributes' do
+    before do
+      allow(chess_game).to receive(:collect_name).and_return('name1', 'name2')
+      allow(player1).to receive(:set_name)
+      allow(player2).to receive(:set_name)
+    end
+
+    it 'sends #set_name to both players', :aggregate_failures do
+      expect(player1).to receive(:set_name).with('name1')
+      expect(player2).to receive(:set_name).with('name2')
+      chess_game.assign_player_attributes
+    end
+  end
 end
 
