@@ -23,6 +23,11 @@ class ChessGame
     end
   end
 
+  def assign_player_attributes
+    assign_names
+    assign_colors
+  end
+
   private
 
   def introduction
