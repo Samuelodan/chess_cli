@@ -70,6 +70,20 @@ RSpec.describe ChessGame do
         expect(result).to be true
       end
     end
+
+    context 'when input is invalid' do
+      context 'when input is in the wrong format' do
+        before do
+          allow(board).to receive(:piece_from_str)
+        end
+
+        it 'returns false' do
+          mock_input = 'a9j5'
+          result = chess_game.valid_move_input?(mock_input)
+          expect(result).to be false
+        end
+      end
+    end
   end
 end
 
