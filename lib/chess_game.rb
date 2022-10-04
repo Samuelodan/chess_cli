@@ -22,6 +22,10 @@ class ChessGame
     invalid_dest: "Your piece cannot move to that position, pls try again"
   }.freeze
 
+  def error_message_for(error_name)
+    puts ERROR_MESSAGES[error_name]
+  end
+
   def change_turn
     if current_player == player1
       @current_player = player2
