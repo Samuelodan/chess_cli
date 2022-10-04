@@ -55,6 +55,15 @@ class ChessGame
     assign_colors
   end
 
+  def make_move
+    prompt_move
+    input = get_move_input
+    from = input.slice(0..1)
+    to = input.slice(2..3)
+    board.update_targ_and_dest(target: from, destination: to)
+    board.place_piece
+  end
+
   def prompt_move
     puts <<~HEREDOC
       #{current_player.name}, move your piece by entering the positions like
