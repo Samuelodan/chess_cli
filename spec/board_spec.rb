@@ -409,6 +409,21 @@ RSpec.describe Board do
         expect(result).to be true
       end
     end
+
+    context 'when move is legal' do
+      before do
+        fen_str = '4k3/8/1P2r3/6K1/8/4Q3/8/1R6 w - - 0 1'
+        board.arrange_pieces_from_fen(fen_str)
+        target = 'e6'
+        destination = 'e3'
+        board.update_targ_and_dest(target: target, destination: destination)
+      end
+
+      it 'returns false' do
+        result = board.move_valid_but_illegal?
+        expect(result).to be false
+      end
+    end
   end
 end
 
