@@ -15,6 +15,13 @@ class ChessGame
     @current_player = player1
   end
 
+  ERROR_MESSAGES = {
+    wrong_format: "Please use the correct format like so, 'h2h4'",
+    no_piece: "There's no piece on that position, pls try again",
+    wrong_piece: "You can't move your opponent's piece, pls try again",
+    invalid_dest: "Your piece cannot move to that position, pls try again"
+  }.freeze
+
   def change_turn
     if current_player == player1
       @current_player = player2
