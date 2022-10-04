@@ -83,6 +83,22 @@ RSpec.describe ChessGame do
           expect(result).to be false
         end
       end
+
+      context 'when no piece is selected' do
+        before do
+            pc = nil
+          allow(board).to receive(:piece_from_str).and_return(pc)
+          allow(board).to receive(:update_targ_and_dest)
+          allow(board).to receive(:is_move_legal?).and_return(true)
+          allow(player1).to receive(:color).and_return(:black)
+        end
+
+        it 'returns false' do
+          mock_input = 'a4a5'
+          result = chess_game.valid_move_input?(mock_input)
+          expect(result).to be false
+        end
+      end
     end
   end
 end
