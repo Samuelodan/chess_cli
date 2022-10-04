@@ -53,5 +53,23 @@ RSpec.describe ChessGame do
       chess_game.assign_player_attributes
     end
   end
+
+  describe '#valid_move_input?' do
+    context 'when input is valid' do
+      before do
+        pc = Pawn.new(letter: 'p')
+        allow(board).to receive(:piece_from_str).and_return(pc)
+        allow(board).to receive(:update_targ_and_dest)
+        allow(board).to receive(:is_move_legal?).and_return(true)
+        allow(player1).to receive(:color).and_return(:black)
+      end
+
+      it 'returns true' do
+        mock_input = 'a4a5'
+        result = chess_game.valid_move_input?(mock_input)
+        expect(result).to be true
+      end
+    end
+  end
 end
 
