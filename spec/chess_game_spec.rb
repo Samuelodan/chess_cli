@@ -99,6 +99,20 @@ RSpec.describe ChessGame do
           expect(result).to be false
         end
       end
+
+      context "when opponent's piece is selected" do
+        before do
+            pc = Pawn.new(letter: 'P')
+          allow(board).to receive(:piece_from_str).and_return(pc)
+          allow(player1).to receive(:color).and_return(:black)
+        end
+
+        it 'returns false' do
+          mock_input = 'a4a5'
+          result = chess_game.valid_move_input?(mock_input)
+          expect(result).to be false
+        end
+      end
     end
   end
 end
