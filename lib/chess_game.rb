@@ -63,6 +63,17 @@ class ChessGame
     HEREDOC
   end
 
+  def get_move_input
+    loop do
+      print '>> '
+      input = get.chomp
+      break input if valid_move_input?(input)
+
+      display_error_message(input)
+    end
+  end
+
+
   def valid_move_input?(input)
     from = input.slice(0..1)
     to = input.slice(2..3)
