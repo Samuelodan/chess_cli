@@ -19,7 +19,8 @@ class ChessGame
     wrong_format: "Please use the correct format like so, 'h2h4'",
     no_piece: "There's no piece on that position, pls try again",
     wrong_piece: "You can't move your opponent's piece, pls try again",
-    invalid_dest: "Your piece cannot move to that position, pls try again"
+    invalid_dest: "Your piece cannot move to that position, pls try again",
+    self_check: "You can't place/leave your king in check, try again"
   }.freeze
 
   def error_message_for(error_name)
