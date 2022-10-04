@@ -188,6 +188,11 @@ class Board
     @sel_pc_moves.include?(@destination_position)
   end
 
+  def move_valid_but_illegal?
+    pc = @selected_square.piece
+    pc.pseudolegal_moves.include?(@destination_position) && !self.is_move_legal?
+  end
+
   def place_piece
     return unless is_move_legal?
 
