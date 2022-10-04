@@ -164,6 +164,11 @@ class Board
 
   public
 
+  # write tests
+  def piece_from_str(pos_str)
+    select_square_from_str(pos_str).piece
+  end
+
   def square_at_position(pos)
     squares.each do |row|
       row.each do |square|
