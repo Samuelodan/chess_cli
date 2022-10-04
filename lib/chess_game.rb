@@ -40,6 +40,7 @@ class ChessGame
       error_message_for(:wrong_piece)
     else
       board.update_targ_and_dest(target: from, destination: to)
+      return error_message_for(:self_check) if board.move_valid_but_illegal?
       error_message_for(:invalid_dest) unless board.is_move_legal?
     end
   end
