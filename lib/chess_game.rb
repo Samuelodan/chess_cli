@@ -26,6 +26,22 @@ class ChessGame
     puts ERROR_MESSAGES[error_name]
   end
 
+  def display_error_message(input)
+    from = input.slice(0..1)
+    to = input.slice(2..3)
+    pc = board.piece_from_str(from)
+    if !input.match?(/^[a-h][1-8][a-h][1-8]$/)
+      error_message_for(:wrong_format)
+    elsif pc.nil?
+      error_message_for(:no_piece)
+    elsif pc.color != current_player.color
+      error_message_for(:wrong_piece)
+    else
+      board.update_targ_and_dest(target: from, destination: to)
+      error_message_for(:invalid_dest) unless board.is_move_legal?
+    end
+  end
+
   def change_turn
     if current_player == player1
       @current_player = player2
