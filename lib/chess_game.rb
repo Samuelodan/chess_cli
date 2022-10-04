@@ -75,7 +75,7 @@ class ChessGame
   def get_move_input
     loop do
       print '>> '
-      input = get.chomp
+      input = gets.chomp
       break input if valid_move_input?(input)
 
       display_error_message(input)
