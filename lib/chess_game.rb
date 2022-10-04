@@ -84,10 +84,11 @@ class ChessGame
 
 
   def valid_move_input?(input)
+    return false unless input.match?(/^[a-h][1-8][a-h][1-8]$/)
+
     from = input.slice(0..1)
     to = input.slice(2..3)
     pc = board.piece_from_str(from)
-    return false unless input.match?(/^[a-h][1-8][a-h][1-8]$/)
     return false if pc.nil? || pc.color != current_player.color
 
     board.update_targ_and_dest(target: from, destination: to)
