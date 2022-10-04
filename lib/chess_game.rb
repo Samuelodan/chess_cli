@@ -27,12 +27,13 @@ class ChessGame
   end
 
   def display_error_message(input)
+    unless input.match?(/^[a-h][1-8][a-h][1-8]$/)
+      return error_message_for(:wrong_format)
+    end
     from = input.slice(0..1)
     to = input.slice(2..3)
     pc = board.piece_from_str(from)
-    if !input.match?(/^[a-h][1-8][a-h][1-8]$/)
-      error_message_for(:wrong_format)
-    elsif pc.nil?
+    if pc.nil?
       error_message_for(:no_piece)
     elsif pc.color != current_player.color
       error_message_for(:wrong_piece)
