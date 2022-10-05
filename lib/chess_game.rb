@@ -120,6 +120,16 @@ class ChessGame
   HEREDOC
   end
 
+  def declare_draw
+    puts <<-HEREDOC
+  \e[1m\e[93m STALEMATE!! \e[0m
+
+  The match ended in a draw
+  Well, at least, nobody lost. he he
+  Better luck next time
+  HEREDOC
+  end
+
   def begin_promotion
     system('clear')
     board.display
