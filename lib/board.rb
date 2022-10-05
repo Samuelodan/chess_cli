@@ -83,16 +83,16 @@ class Board
   public
 
   def display
-    puts '    a  b  c  d  e  f  g  h'
+    puts "\n             a  b  c  d  e  f  g  h"
     squares.each_with_index do |row, row_idx|
-      print " #{8 - row_idx} "
+      print "          #{8 - row_idx} "
       row.each_with_index do |item, idx|
         item.draw_square
       end
       print " #{8 - row_idx} "
         print "\n"
     end
-    puts "    a  b  c  d  e  f  g  h"
+    puts "             a  b  c  d  e  f  g  h\n\n\n"
   end
 
   def arrange_pieces
