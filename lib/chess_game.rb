@@ -111,6 +111,8 @@ class ChessGame
   end
 
   def begin_promotion
+    system('clear')
+    board.display
     promotion_prompt
     input = get_promotion_input
     board.promote_pawn(choice: input)
