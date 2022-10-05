@@ -111,6 +111,10 @@ class ChessGame
     HEREDOC
   end
 
+  def valid_promotion_input?(input)
+    ['q', 'r', 'n', 'b'].include?(input.downcase)
+  end
+
   private
 
   def introduction
