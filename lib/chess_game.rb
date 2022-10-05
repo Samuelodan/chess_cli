@@ -89,16 +89,16 @@ class ChessGame
   end
 
   def prompt_move
-    puts <<~HEREDOC
-      #{current_player.name}, move your piece by entering the positions like
-      so, 'c4e6' without the quotes
+    puts <<-HEREDOC
+  #{current_player.name}, move your piece by entering the positions
+  like so, 'c4e6' without the quotes
 
     HEREDOC
   end
 
   def get_move_input
     loop do
-      print '>> '
+      print '  >> '
       input = gets.chomp
       break input if valid_move_input?(input)
 
@@ -160,20 +160,21 @@ class ChessGame
   end
 
   def promotion_prompt
-    puts <<~HEREDOC
-      It's time to promote your Pawn. Enter any one of the options below
-      without the brackets.
+    puts <<-HEREDOC
+  It's time to promote your Pawn. Enter any one of the options below
+  without the brackets.
 
-      [q] to promote to Queen
-      [r] for Rook
-      [n] for Knight
-      [b] for Bishop
+  [q] to promote to Queen
+  [r] for Rook
+  [n] for Knight
+  [b] for Bishop
 
     HEREDOC
   end
 
   def get_promotion_input
     loop do
+      print '  >> '
       input = gets.chomp
       break input if valid_promotion_input?(input)
 
@@ -189,21 +190,23 @@ class ChessGame
 
   def introduction
     system('clear')
-    puts <<~HEREDOC
-      W E L C O M E  TO  C H E S S (C L I)
+    puts <<-HEREDOC
+  \n\n
+  \e[1mW E L C O M E  TO  C H E S S (C L I)\e[0m
 
-      THIS IS PRETTY MUCH THE SAME GAME YOU KNOW (AND LOVE? HA HA!)
-      THE MAIN DIFFERENCE IS YOU USE ALGEBRAIC NOTATION TO MOVE PIECES
-      SO, "a2a4" MEANS "MOVE THE PIECE AT A2 TO A4." A VALID POSITION
-      HAS A LETTER BETWEEN 'a' AND 'h', AND A NUMBER BETWEEN '1' AND '8'.
-      IT MIGHT SEEM WEIRD AT FIRST BUT IT'LL FEEL NATURAL MUCH SOONER
-      THAN YOU EXPECT.
+  THIS IS PRETTY MUCH THE SAME GAME YOU KNOW (AND LOVE? HA HA!)
+  THE MAIN DIFFERENCE IS YOU USE ALGEBRAIC NOTATION TO MOVE PIECES
+  SO, "a2a4" MEANS "MOVE THE PIECE AT A2 TO A4." A VALID POSITION
+  HAS A LETTER BETWEEN 'a' AND 'h', AND A NUMBER BETWEEN '1' AND '8'.
+  IT MIGHT SEEM WEIRD AT FIRST BUT IT'LL FEEL NATURAL MUCH SOONER
+  THAN YOU EXPECT.
 
-      ALRIGHT, ENOUGH SAID, LET THE GAME BEGIN
+  ALRIGHT, ENOUGH SAID, LET THE GAME BEGIN
 
-      enter any key to continue...\n
+  enter any key to continue...
+
     HEREDOC
-    print '>> '
+    print '  >> '
     gets.chomp
   end
 
@@ -219,7 +222,12 @@ class ChessGame
 
   def collect_name(player_no:)
     system('clear')
-    print "#{player_no}, enter your name\n\n >> "
+    puts <<-HEREDOC
+  \n\n\n\n\n\n\n\n\n\n\n\n\n
+  \e[1m#{player_no}\e[0m, enter your name
+
+    HEREDOC
+    print '  >> '
     gets.chomp
   end
 end
