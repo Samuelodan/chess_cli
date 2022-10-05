@@ -110,6 +110,13 @@ class ChessGame
     sleep 2
   end
 
+  def announce_results
+    system('clear')
+    board.display
+    declare_win if board.checkmate?
+    declare_draw if board.stalemate?
+  end
+
   def declare_win
     puts <<-HEREDOC
   \e[1m\e[92m CHECKMATE!! \e[0m
