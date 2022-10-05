@@ -99,6 +99,12 @@ class ChessGame
     board.is_move_legal?
   end
 
+  def begin_promotion
+    promotion_prompt
+    input = get_promotion_input
+    board.promote_pawn(choice: input)
+  end
+
   def promotion_prompt
     puts <<~HEREDOC
       It's time to promote your Pawn. Enter any one of the options below
