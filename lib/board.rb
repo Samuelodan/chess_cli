@@ -216,7 +216,9 @@ class Board
     pawn = sqr.piece
     pl = pawn.letter
     letter = pl == pl.upcase ? choice.upcase : choice
-    sqr.piece = Piece.for(letter)
+    new_pc = Piece.for(letter)
+    new_pc.update_board(self)
+    sqr.piece = new_pc
   end
 
   def king_in_check?
