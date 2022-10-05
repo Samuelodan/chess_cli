@@ -105,6 +105,11 @@ class ChessGame
     board.is_move_legal?
   end
 
+  def announce_check
+    puts "\e[1m\e[91m  CHECK!!! \e[0m"
+    sleep 2
+  end
+
   def begin_promotion
     promotion_prompt
     input = get_promotion_input
