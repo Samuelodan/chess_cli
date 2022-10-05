@@ -46,6 +46,12 @@ class ChessGame
     end
   end
 
+  def intro_and_setup
+    introduction
+    assign_player_attributes
+    board.arrange_pieces
+  end
+
   def change_turn
     if current_player == player1
       @current_player = player2
