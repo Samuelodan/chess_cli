@@ -110,6 +110,16 @@ class ChessGame
     sleep 2
   end
 
+  def declare_win
+    puts <<-HEREDOC
+  \e[1m\e[92m CHECKMATE!! \e[0m
+
+  \e[1m #{current_player.name.upcase} \e[0m just won the game.
+
+  Better luck next time
+  HEREDOC
+  end
+
   def begin_promotion
     system('clear')
     board.display
