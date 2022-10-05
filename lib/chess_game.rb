@@ -127,7 +127,7 @@ class ChessGame
   def get_promotion_input
     loop do
       input = gets.chomp
-      break input if valid_move_input?(input)
+      break input if valid_promotion_input?(input)
 
       error_message_for(:promo_letter)
     end
