@@ -82,7 +82,7 @@ class Board
 
   public
 
-  def display_board
+  def display
     puts '    a  b  c  d  e  f  g  h'
     squares.each_with_index do |row, row_idx|
       print " #{8 - row_idx} "
