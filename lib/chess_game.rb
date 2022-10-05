@@ -98,6 +98,19 @@ class ChessGame
     board.is_move_legal?
   end
 
+  def promotion_prompt
+    puts <<~HEREDOC
+      It's time to promote your Pawn. Enter any one of the options below
+      without the brackets.
+
+      [q] to promote to Queen
+      [r] for Rook
+      [n] for Knight
+      [b] for Bishop
+
+    HEREDOC
+  end
+
   private
 
   def introduction
