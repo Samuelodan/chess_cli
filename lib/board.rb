@@ -211,6 +211,7 @@ class Board
   end
 
   def promote_pawn(choice:)
+    choice = choice.downcase
     sqr = find_promotable_sqr
     pawn = sqr.piece
     pl = pawn.letter
