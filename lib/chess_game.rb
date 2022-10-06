@@ -62,6 +62,25 @@ class ChessGame
     announce_results
   end
 
+  def start_new_game
+    assign_player_attributes
+    board.arrange_pieces
+    play
+  end
+
+  def play
+    loop do
+      system('clear')
+      board.display
+      make_move
+      announce_check if board.king_in_check?
+      begin_promotion if board.can_promote?
+      break if board.stalemate? || board.checkmate? || @quit
+      change_turn
+    end
+    announce_results
+  end
+
   def intro_and_setup
     introduction
     assign_player_attributes
