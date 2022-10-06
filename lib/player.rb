@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Player
-  attr_reader :name, :color
+  attr_reader :color
 
   def initialize
     @name = nil
@@ -10,6 +10,10 @@ class Player
 
   def set_name(name)
     @name = name
+  end
+
+  def name
+    player_name = @name.empty? ? default_name : @name
   end
 
   def set_color(color)
