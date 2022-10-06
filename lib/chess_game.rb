@@ -22,7 +22,8 @@ class ChessGame
     wrong_piece: "You can't move your opponent's piece, pls try again",
     invalid_dest: "Your piece cannot move to that position, pls try again",
     self_check: "You can't place/leave your king in check, try again",
-    promo_letter: "Please enter a valid piece letter"
+    promo_letter: "Please enter a valid piece letter",
+    menu_input: "Please enter a valid item number"
   }.freeze
 
   def error_message_for(error_name)
