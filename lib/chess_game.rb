@@ -133,21 +133,20 @@ class ChessGame
 
   def declare_win
     puts <<-HEREDOC
-  \e[1m\e[92m CHECKMATE!! \e[0m
+                 \e[1m\e[92m CHECKMATE!! \e[0m
 
-  \e[1m #{current_player.name}\e[0m just won the game.
+         \e[1m #{current_player.name}\e[0m just won the game.
 
-  Better luck next time
   HEREDOC
   end
 
   def declare_draw
     puts <<-HEREDOC
-  \e[1m\e[93m STALEMATE!! \e[0m
+                 \e[1m\e[93m STALEMATE!! \e[0m
 
-  The match ended in a draw
-  Well, at least, nobody lost. he he
-  Better luck next time
+            The match ended in a draw
+            Well, at least, nobody lost. he he
+            Better luck next time
   HEREDOC
   end
 
