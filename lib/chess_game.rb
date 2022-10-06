@@ -135,7 +135,7 @@ class ChessGame
     puts <<-HEREDOC
   \e[1m\e[92m CHECKMATE!! \e[0m
 
-  \e[1m #{current_player.name.upcase} \e[0m just won the game.
+  \e[1m #{current_player.name}\e[0m just won the game.
 
   Better luck next time
   HEREDOC
