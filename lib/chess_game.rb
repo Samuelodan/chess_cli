@@ -99,7 +99,7 @@ class ChessGame
   def get_move_input
     loop do
       print '  >> '
-      input = gets.chomp
+      input = gets.chomp.downcase
       break input if valid_move_input?(input)
 
       display_error_message(input)
@@ -175,7 +175,7 @@ class ChessGame
   def get_promotion_input
     loop do
       print '  >> '
-      input = gets.chomp
+      input = gets.chomp.downcase
       break input if valid_promotion_input?(input)
 
       error_message_for(:promo_letter)
@@ -183,7 +183,7 @@ class ChessGame
   end
 
   def valid_promotion_input?(input)
-    ['q', 'r', 'n', 'b'].include?(input.downcase)
+    ['q', 'r', 'n', 'b'].include?(input)
   end
 
   private
