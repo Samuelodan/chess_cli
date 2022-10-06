@@ -240,6 +240,10 @@ class ChessGame
     print '  >> '
   end
 
+  def valid_menu_input?(input)
+    ['1', '2'].include?(input)
+  end
+
   def assign_colors
     player1.set_color(:white)
     player2.set_color(:black)
