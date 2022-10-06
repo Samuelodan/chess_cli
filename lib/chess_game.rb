@@ -13,6 +13,7 @@ class ChessGame
     @player1 = player1
     @player2 = player2
     @current_player = player1
+    @quit = false
   end
 
   ERROR_MESSAGES = {
@@ -54,7 +55,7 @@ class ChessGame
       make_move
       announce_check if board.king_in_check?
       begin_promotion if board.can_promote?
-      break if board.stalemate? || board.checkmate?
+      break if board.stalemate? || board.checkmate? || @quit
       change_turn
     end
     announce_results
@@ -82,6 +83,7 @@ class ChessGame
   def make_move
     prompt_move
     input = get_move_input
+    return @quit = true if input == 'quit'
     from = input.slice(0..1)
     to = input.slice(2..3)
     board.update_targ_and_dest(target: from, destination: to)
@@ -90,6 +92,8 @@ class ChessGame
 
   def prompt_move
     puts <<-HEREDOC
+    [enter 'quit' if you choose to surrender]
+
   #{current_player.name}, move your piece by entering the positions
   like so, 'c4e6' without the quotes
 
@@ -100,7 +104,7 @@ class ChessGame
     loop do
       print '  >> '
       input = gets.chomp.downcase
-      break input if valid_move_input?(input)
+      break input if valid_move_input?(input) || input == 'quit'
 
       display_error_message(input)
     end
