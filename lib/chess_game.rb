@@ -133,6 +133,7 @@ class ChessGame
     board.display
     declare_win if board.checkmate?
     declare_draw if board.stalemate?
+    declare_surrender if @quit
   end
 
   def declare_win
@@ -152,6 +153,20 @@ class ChessGame
             Well, at least, nobody lost. he he
             Better luck next time
   HEREDOC
+  end
+
+  def declare_surrender
+    @quit = false
+    loser = current_player.name
+    change_turn
+    winner = current_player.name
+    puts <<-HEREDOC
+
+              Well done #{winner}!!
+
+  #{loser} couldn't withstand your awesomeness
+
+    HEREDOC
   end
 
   def begin_promotion
