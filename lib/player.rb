@@ -15,5 +15,12 @@ class Player
   def set_color(color)
     @color = color
   end
+
+  private
+
+  def default_name
+    @color == :white ? 'Player1' : 'Player2'
+  end
+
 end
 
