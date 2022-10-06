@@ -241,6 +241,16 @@ class ChessGame
     print '  >> '
   end
 
+  def get_menu_input
+    loop do
+      input = gets.chomp
+
+      break input if valid_menu_input?
+
+      error_message_for(:menu_input)
+    end
+  end
+
   def valid_menu_input?(input)
     ['1', '2'].include?(input)
   end
