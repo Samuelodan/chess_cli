@@ -228,6 +228,18 @@ class ChessGame
     gets.chomp
   end
 
+  def display_menu
+    puts <<-HEREDOC
+  \n\n\n\n\n
+  ENTER ANY OF THE FOLLOWING OPTIONS
+
+  [1] start new game
+  [2] load saved game
+
+    HEREDOC
+    print '  >> '
+  end
+
   def assign_colors
     player1.set_color(:white)
     player2.set_color(:black)
