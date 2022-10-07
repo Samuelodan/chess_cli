@@ -81,6 +81,14 @@ class ChessGame
     announce_results
   end
 
+  def menu_action
+    system('clear')
+    introduction
+    display_menu
+    input = get_menu_input
+    start_new_game if input == '1'
+  end
+
   def intro_and_setup
     introduction
     assign_player_attributes
