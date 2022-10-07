@@ -188,6 +188,15 @@ class ChessGame
     HEREDOC
   end
 
+  def get_play_again_input
+    loop do
+      input = gets.chomp
+      break input if valid_play_again_input?(input)
+
+      error_message_for(:replay_input)
+    end
+  end
+
   def play_again_prompt
     puts <<-HEREDOC
 
