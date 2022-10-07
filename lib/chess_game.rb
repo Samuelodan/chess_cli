@@ -187,6 +187,18 @@ class ChessGame
     HEREDOC
   end
 
+  def play_again_prompt
+    puts <<-HEREDOC
+
+  Do you want to play again?
+  enter the corresponding number to choose
+  [1] yeah
+  [2] no thanks
+
+    HEREDOC
+    print '  >> '
+  end
+
   def begin_promotion
     system('clear')
     board.display
