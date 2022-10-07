@@ -257,6 +257,7 @@ class ChessGame
   end
 
   def display_menu
+    system('clear')
     puts <<-HEREDOC
   \n\n\n\n\n
   ENTER ANY OF THE FOLLOWING OPTIONS
