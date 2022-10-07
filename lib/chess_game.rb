@@ -281,6 +281,7 @@ class ChessGame
   HAS A LETTER BETWEEN 'a' AND 'h', AND A NUMBER BETWEEN '1' AND '8'.
   IT MIGHT SEEM WEIRD AT FIRST BUT IT'LL FEEL NATURAL MUCH SOONER
   THAN YOU EXPECT.
+  <please turn up the zoom in your browser or terminal if pieces are too small>
 
   ALRIGHT, ENOUGH SAID, LET THE GAME BEGIN
 
