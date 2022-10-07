@@ -23,7 +23,6 @@ RSpec.describe Pawn do
       it '(already moved) g3 pawn has 2 moves' do
         pos = Position.for('g3')
         piece = board.square_at_position(pos).piece
-        piece.moved
         move_count = piece.pseudolegal_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
@@ -40,7 +39,6 @@ RSpec.describe Pawn do
       it '(already moved) a5 pawn has 2 moves' do
         pos = Position.for('a5')
         piece = board.square_at_position(pos).piece
-        piece.moved
         move_count = piece.pseudolegal_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
@@ -49,7 +47,6 @@ RSpec.describe Pawn do
       it '(already moved) c6 pawn has 0 moves' do
         pos = Position.for('c6')
         piece = board.square_at_position(pos).piece
-        piece.moved
         move_count = piece.pseudolegal_moves.length
         exp_count = 0
         expect(move_count).to eql(exp_count)
@@ -73,7 +70,6 @@ RSpec.describe Pawn do
       it '(already moved) b5 pawn has 2 moves' do
         pos = Position.for('b5')
         piece = board.square_at_position(pos).piece
-        piece.moved
         move_count = piece.pseudolegal_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
@@ -82,7 +78,6 @@ RSpec.describe Pawn do
       it '(already moved) g3 pawn has 2 moves' do
         pos = Position.for('g3')
         piece = board.square_at_position(pos).piece
-        piece.moved
         move_count = piece.pseudolegal_moves.length
         exp_count = 2
         expect(move_count).to eql(exp_count)
@@ -182,7 +177,6 @@ RSpec.describe Pawn do
       it '(already moved) d4 pawn has 1 moves' do
         pos = Position.for('d4')
         piece = board.square_at_position(pos).piece
-        piece.moved
         move_count = piece.legal_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
@@ -191,7 +185,6 @@ RSpec.describe Pawn do
       it '(already moved) g4 pawn has 1 moves' do
         pos = Position.for('g4')
         piece = board.square_at_position(pos).piece
-        piece.moved
         move_count = piece.legal_moves.length
         exp_count = 1
         expect(move_count).to eql(exp_count)
