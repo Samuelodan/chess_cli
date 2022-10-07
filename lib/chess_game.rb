@@ -153,6 +153,7 @@ class ChessGame
     declare_win if board.checkmate?
     declare_draw if board.stalemate?
     declare_surrender if @quit
+    play_again_or_quit
   end
 
   def declare_win
@@ -186,6 +187,17 @@ class ChessGame
   #{loser} couldn't withstand your awesomeness
 
     HEREDOC
+  end
+
+  def play_again_or_quit
+    play_again_prompt
+    input = get_play_again_input
+    if input == '1'
+      board.arrange_pieces
+      play
+    elsif input == '2'
+      thank_players
+    end
   end
 
   def thank_players
