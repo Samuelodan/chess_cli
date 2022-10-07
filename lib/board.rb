@@ -96,6 +96,7 @@ class Board
   end
 
   def arrange_pieces
+    clear_board
     arrange_black_pieces
     arrange_white_pieces
     assign_piece_boards
