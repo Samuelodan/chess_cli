@@ -272,7 +272,7 @@ class ChessGame
     loop do
       input = gets.chomp
 
-      break input if valid_menu_input?
+      break input if valid_menu_input?(input)
 
       error_message_for(:menu_input)
     end
