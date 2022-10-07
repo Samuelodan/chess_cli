@@ -18,6 +18,12 @@ class Pawn < Piece
     letter == 'p'
   end
 
+  def moved?
+    return false if color == :white && position.rank == 2
+    return false if color == :black && position.rank == 7
+    true
+  end
+
   def pseudolegal_moves
     @position = position
     unfiltered_moves = handle_pawn_collision(possible_moves)
