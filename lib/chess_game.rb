@@ -302,11 +302,11 @@ class ChessGame
   [2] load saved game
 
     HEREDOC
-    print '  >> '
   end
 
   def get_menu_input
     loop do
+      print '  >> '
       input = gets.chomp
 
       break input if valid_menu_input?(input)
