@@ -49,17 +49,7 @@ class ChessGame
   end
 
   def start
-    intro_and_setup
-    loop do
-      system('clear')
-      board.display
-      make_move
-      announce_check if board.king_in_check?
-      begin_promotion if board.can_promote?
-      break if board.stalemate? || board.checkmate? || @quit
-      change_turn
-    end
-    announce_results
+    menu_action
   end
 
   def start_new_game
