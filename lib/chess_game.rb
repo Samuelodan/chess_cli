@@ -188,6 +188,13 @@ class ChessGame
     HEREDOC
   end
 
+  def thank_players
+    puts <<-HEREDOC
+
+            Thank you for playing :)
+    HEREDOC
+  end
+
   def get_play_again_input
     loop do
       input = gets.chomp
