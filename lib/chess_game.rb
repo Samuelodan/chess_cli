@@ -199,6 +199,10 @@ class ChessGame
     print '  >> '
   end
 
+  def valid_play_again_input?(input)
+    ['1', '2'].include?(input)
+  end
+
   def begin_promotion
     system('clear')
     board.display
