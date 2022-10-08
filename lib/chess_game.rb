@@ -208,6 +208,21 @@ class ChessGame
     })
   end
 
+  def save_game
+    save_to_file
+    confirm_save
+  end
+
+  def confirm_save
+    puts <<-HEREDOC
+
+  Game saved successfully...
+
+  Now, make your move or quit if you want to come back later
+
+    HEREDOC
+  end
+
   def save_to_file
     Dir.mkdir('../saves') unless Dir.exist?('../saves')
 
