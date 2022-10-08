@@ -216,6 +216,13 @@ class ChessGame
     end
   end
 
+  def load_save
+    file_number = get_save_choice.to_s - 1
+    filename = get_filelist[file_number]
+    from_json(filename)
+    play
+  end
+
   def from_json(filename)
     data = JSON.load(File.read("../saves/#{filename}"))
     @board.arrange_pieces_from_fen(data['board'])
