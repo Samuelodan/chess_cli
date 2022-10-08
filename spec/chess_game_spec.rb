@@ -69,7 +69,7 @@ RSpec.describe ChessGame do
         allow(player1).to receive(:color).and_return(:black)
       end
 
-      it 'returns true' do
+      xit 'returns true' do
         mock_input = 'a4a5'
         result = chess_game.valid_move_input?(mock_input)
         expect(result).to be true
@@ -112,7 +112,7 @@ RSpec.describe ChessGame do
           allow(player1).to receive(:color).and_return(:black)
         end
 
-        it 'returns false' do
+        xit 'returns false' do
           mock_input = 'a4a5'
           result = chess_game.valid_move_input?(mock_input)
           expect(result).to be false
