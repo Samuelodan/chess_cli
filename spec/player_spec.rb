@@ -9,8 +9,7 @@ RSpec.describe Player do
     it 'assigns the argument to @name' do
       name = 'James'
       player.set_name(name)
-      name_attr = player.instance_variable_get(:@name)
-      expect(name_attr).to eql(name)
+      expect(player.name).to eql(name)
     end
   end
 
