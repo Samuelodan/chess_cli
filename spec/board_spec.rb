@@ -438,6 +438,18 @@ RSpec.describe Board do
         expect(result).to eql(@brd_fen_str1)
       end
     end
+
+    context 'for brd_fen_str2' do
+      before do
+        @brd_fen_str2 = 'rnbqkb1r/N3n1p1/1p5B/5p2/3Q4/8/2P1PPPP/R3KBNR'
+        board.arrange_pieces_from_fen(@brd_fen_str2)
+      end
+
+      it 'returns identical fen string' do
+        result = board.to_fen
+        expect(result).to eql(@brd_fen_str2)
+      end
+    end
   end
 end
 
