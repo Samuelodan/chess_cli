@@ -13,6 +13,11 @@ RSpec.describe ChessGame do
   let(:player2) { Player.new }
 
   describe '#change_turn' do
+    before do
+      player1.set_color(:white)
+      player2.set_color(:black)
+    end
+
     context 'when current player is player1' do
       it 'changes @current_player to player2' do
         expect do
@@ -23,7 +28,7 @@ RSpec.describe ChessGame do
 
     context 'when current player is player2' do
       before do
-        chess_game.instance_variable_set(:@current_player, player2)
+        chess_game.instance_variable_set(:@current_color, :black)
       end
 
       it 'changes @current_player to player1' do
