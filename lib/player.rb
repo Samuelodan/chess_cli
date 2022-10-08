@@ -19,6 +19,13 @@ class Player
     "\e[1m#{bg_color}#{name_color} #{player_name} \e[0m"
   end
 
+  def pretty_name
+    player_name = @name.empty? ? default_name : @name
+    bg_color = "\e[48;2;181;136;99m"
+    name_color = @color == :white ? "\e[97m" : "\e[30m"
+    "\e[1m#{bg_color}#{name_color} #{player_name} \e[0m"
+  end
+
   def set_color(color)
     @color = color
   end
