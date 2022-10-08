@@ -87,7 +87,7 @@ module Display
     puts <<-HEREDOC
     [enter 'quit' if you choose to surrender]
 
-  #{current_player.name}, move your piece by entering the positions
+  #{current_player.pretty_name}, move your piece by entering the positions
   like so, 'c4e6' without the quotes
 
     HEREDOC
@@ -110,7 +110,7 @@ module Display
     puts <<-HEREDOC
                  \e[1m\e[92m CHECKMATE!! \e[0m
 
-         \e[1m #{current_player.name}\e[0m just won the game.
+         \e[1m #{current_player.pretty_name}\e[0m just won the game.
 
   HEREDOC
   end
@@ -127,9 +127,9 @@ module Display
 
   def declare_surrender
     @quit = false
-    loser = current_player.name
+    loser = current_player.pretty_name
     change_turn
-    winner = current_player.name
+    winner = current_player.pretty_name
     puts <<-HEREDOC
 
               Well done #{winner}!!
