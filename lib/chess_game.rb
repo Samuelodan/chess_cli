@@ -251,6 +251,8 @@ class ChessGame
   end
 
   def get_filelist
+    Dir.mkdir('../saves') unless Dir.exist?('../saves')
+
     Dir.children('../saves').first(5)
   end
 
