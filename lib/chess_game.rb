@@ -237,7 +237,7 @@ class ChessGame
     display_save_list
     loop do
       input = gets.chomp
-      break input unless valid_save_choice?(input)
+      break input if valid_save_choice?(input)
 
       error_message_for(:save_choice)
     end
