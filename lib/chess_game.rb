@@ -206,5 +206,14 @@ class ChessGame
       quit: @quit
     })
   end
+
+  def save_to_file
+    Dir.mkdir('../saves') unless Dir.exist?('../saves')
+
+    filename = generate_filename
+    File.open("../saves/#{filename}", 'w') do |file|
+      file.puts to_json
+    end
+  end
 end
 
