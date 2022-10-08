@@ -115,6 +115,18 @@ class Board
     assign_piece_boards
   end
 
+  def to_fen
+    str = ''
+    squares.each do |row|
+      row.each do |sqr|
+        str += sqr.piece.letter if sqr.piece
+        str += '1' unless sqr.piece
+      end
+      str += '/' unless row == squares.last
+    end
+    str.gsub(/[1]+/) { |match| match.length }
+  end
+
   private
 
   def assign_piece_boards
