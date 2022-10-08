@@ -218,7 +218,7 @@ class ChessGame
   end
 
   def load_save
-    file_number = get_save_choice.to_s - 1
+    file_number = get_save_choice.to_i - 1
     filename = get_filelist[file_number]
     from_json(filename)
     play
