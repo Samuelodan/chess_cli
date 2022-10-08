@@ -2,6 +2,8 @@
 
 # holds all the display methods for ChessGame
 module Display
+  private
+
   ERROR_MESSAGES = {
     wrong_format: "Please use the correct format like so, 'h2h4'",
     no_piece: "There's no piece on that position, pls try again",
@@ -146,7 +148,6 @@ module Display
   [2] no thanks
 
     heredoc
-    print '  >> '
   end
 
   def thank_players
