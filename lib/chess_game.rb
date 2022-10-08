@@ -206,9 +206,9 @@ class ChessGame
   def to_json
     JSON.dump({
       board: board.to_fen,
-      player1: player1,
-      player2: player2,
-      current_player: current_player,
+      player1: player1.to_hash,
+      player2: player2.to_hash,
+      current_color: @current_color,
       quit: @quit
     })
   end
@@ -247,9 +247,11 @@ class ChessGame
   def from_json(filename)
     data = JSON.load(File.read("saves/#{filename}"))
     @board.arrange_pieces_from_fen(data['board'])
-    @player1 = data['player1']
-    @player2 = data['player2']
-    @current_player = data['current_player']
+    @player1.set_name(data['player1']['name'])
+    @player1.set_color(data['player1']['color'].to_sym)
+    @player2.set_name(data['player2']['name'])
+    @player2.set_color(data['player2']['color'].to_sym)
+    @current_color = data['current_color'].to_sym
     @quit = data['quit']
   end
 
