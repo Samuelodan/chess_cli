@@ -8,7 +8,7 @@ require_relative './display'
 class ChessGame
   include Display
 
-  attr_reader :board, :player1, :player2, :current_player
+  attr_reader :board, :player1, :player2
 
   def initialize(board: Board.new,
                  player1: Player.new,
@@ -16,8 +16,12 @@ class ChessGame
     @board = board
     @player1 = player1
     @player2 = player2
-    @current_player = player1
+    @current_color = :white
     @quit = false
+  end
+
+  def current_player
+    [@player1, @player2].find { |player| player.color == @current_color }
   end
 
   def start
@@ -59,10 +63,10 @@ class ChessGame
   end
 
   def change_turn
-    if current_player == player1
-      @current_player = player2
+    if @current_color == :white
+      @current_color = :black
     else
-      @current_player = player1
+      @current_color = :white
     end
   end
 
