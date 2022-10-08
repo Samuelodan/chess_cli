@@ -265,7 +265,19 @@ class ChessGame
     end
   end
 
+  def abort_load
+    puts <<-HEREDOC
+
+  No save found. Starting new game now...
+
+    HEREDOC
+    sleep(1)
+    start_new_game
+  end
+
   def display_save_list
+    return abort_load if get_filelist.empty?
+
     choose_save_prompt
     get_filelist.first(5).each_with_index do |filename, idx|
       puts "  [#{idx + 1}]  #{filename}"
