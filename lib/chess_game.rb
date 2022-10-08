@@ -215,5 +215,11 @@ class ChessGame
       file.puts to_json
     end
   end
+
+  def display_save_list
+    Dir.children('../saves').first(5).each_with_index do |filename, idx|
+      puts "  [#{idx + 1}]  #{filename}"
+    end
+  end
 end
 
