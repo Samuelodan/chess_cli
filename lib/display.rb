@@ -12,7 +12,8 @@ module Display
     self_check: "You can't place/leave your king in check, try again",
     promo_letter: "Please enter a valid piece letter",
     menu_input: "Please enter a valid item number",
-    replay_input: 'Please enter either 1 or 2 to choose'
+    replay_input: 'Please enter either 1 or 2 to choose',
+    save_choice: 'Please enter a number between 1 and 5'
   }.freeze
 
   def error_message_for(error_name)
