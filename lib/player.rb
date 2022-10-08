@@ -27,6 +27,13 @@ class Player
     @color = color
   end
 
+  def to_hash
+    {
+      name: @name,
+      color: @color
+    }
+  end
+
   private
 
   def default_name
