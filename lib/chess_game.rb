@@ -188,5 +188,12 @@ class ChessGame
     player1.set_name(collect_name(player_no: 'Player1'))
     player2.set_name(collect_name(player_no: 'Player2'))
   end
+
+  # save and load section
+  def generate_filename
+    title = "#{player1.name.downcase}_vs_#{player2.name.downcase}"
+    date_and_time = Time.now.strftime("_%Y/%m/%d %H-%M-%S")
+    title + date_and_time
+  end
 end
 
