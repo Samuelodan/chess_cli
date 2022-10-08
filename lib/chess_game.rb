@@ -217,9 +217,18 @@ class ChessGame
   end
 
   def display_save_list
+    choose_save_prompt
     Dir.children('../saves').first(5).each_with_index do |filename, idx|
       puts "  [#{idx + 1}]  #{filename}"
     end
+  end
+
+  def choose_save_prompt
+    puts <<-HEREDOC
+
+  Choose any save from the list below to load it
+
+    HEREDOC
   end
 end
 
