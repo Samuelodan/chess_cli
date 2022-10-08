@@ -86,7 +86,7 @@ module Display
 
   def prompt_move
     puts <<-HEREDOC
-    [enter 'quit' if you choose to surrender]
+    [enter 'save' to save game, or 'quit' to surrender]
 
   #{current_player.pretty_name}, move your piece by entering the positions
   like so, 'c4e6' without the quotes
