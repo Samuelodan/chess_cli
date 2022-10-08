@@ -73,6 +73,24 @@ module Display
     gets.chomp
   end
 
+  def confirm_save
+    puts <<-HEREDOC
+
+  Game saved successfully...
+
+  Now, make your move or quit if you want to come back later
+
+    HEREDOC
+  end
+
+  def choose_save_prompt
+    puts <<-HEREDOC
+
+  Choose any save from the list below to load it
+
+    HEREDOC
+  end
+
   def collect_name(player_no:)
     system('clear')
     puts <<-HEREDOC

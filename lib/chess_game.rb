@@ -197,24 +197,5 @@ class ChessGame
     player1.set_name(collect_name(player_no: 'Player1'))
     player2.set_name(collect_name(player_no: 'Player2'))
   end
-
-  # save and load section
-  def confirm_save
-    puts <<-HEREDOC
-
-  Game saved successfully...
-
-  Now, make your move or quit if you want to come back later
-
-    HEREDOC
-  end
-
-  def choose_save_prompt
-    puts <<-HEREDOC
-
-  Choose any save from the list below to load it
-
-    HEREDOC
-  end
 end
 
