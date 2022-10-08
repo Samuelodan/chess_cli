@@ -230,5 +230,9 @@ class ChessGame
 
     HEREDOC
   end
+
+  def valid_save_choice?(input)
+    ['1', '2', '3', '4', '5'].include?(input)
+  end
 end
 
