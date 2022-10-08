@@ -216,6 +216,11 @@ class ChessGame
     end
   end
 
+  def load_save
+    file_number = get_save_choice.to_s - 1
+
+  end
+
   def get_save_choice
     display_save_list
     loop do
@@ -231,6 +236,10 @@ class ChessGame
     Dir.children('../saves').first(5).each_with_index do |filename, idx|
       puts "  [#{idx + 1}]  #{filename}"
     end
+  end
+
+  def get_filelist
+    Dir.children('../saves').first(5)
   end
 
   def choose_save_prompt
