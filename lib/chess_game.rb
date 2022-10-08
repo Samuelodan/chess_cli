@@ -86,6 +86,7 @@ class ChessGame
       print '  >> '
       input = gets.chomp.downcase
       break input if valid_move_input?(input) || input == 'quit'
+      next save_game if input == 'save'
 
       display_error_message(input)
     end
