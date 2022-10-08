@@ -49,6 +49,7 @@ class ChessGame
     display_menu
     input = get_menu_input
     start_new_game if input == '1'
+    load_save if input == '2'
   end
 
   def intro_and_setup
