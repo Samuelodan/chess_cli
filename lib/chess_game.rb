@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'json'
 require_relative './board'
 require_relative './player'
 require_relative './display'
@@ -194,6 +195,16 @@ class ChessGame
     title = "#{player1.name.downcase}_vs_#{player2.name.downcase}"
     date_and_time = Time.now.strftime("_%Y/%m/%d %H-%M-%S")
     title + date_and_time
+  end
+
+  def to_json
+    JSON.dump({
+      board: board.to_fen,
+      player1: player1,
+      player2: player2,
+      current_player: current_player,
+      quit: @quit
+    })
   end
 end
 
