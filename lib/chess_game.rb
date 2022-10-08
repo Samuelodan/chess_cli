@@ -195,7 +195,7 @@ class ChessGame
   # save and load section
   def generate_filename
     title = "#{player1.name.downcase}_vs_#{player2.name.downcase}"
-    date_and_time = Time.now.strftime("_%Y/%m/%d %H-%M-%S")
+    date_and_time = Time.now.strftime("_%Y-%m-%d %H-%M-%S")
     title + date_and_time
   end
 
