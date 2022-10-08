@@ -128,6 +128,7 @@ class ChessGame
 
   def get_play_again_input
     loop do
+      print '  >> '
       input = gets.chomp
       break input if valid_play_again_input?(input)
 
