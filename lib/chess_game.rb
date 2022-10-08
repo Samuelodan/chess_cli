@@ -225,10 +225,10 @@ class ChessGame
   end
 
   def save_to_file
-    Dir.mkdir('../saves') unless Dir.exist?('../saves')
+    Dir.mkdir('saves') unless Dir.exist?('saves')
 
     filename = generate_filename
-    File.open("../saves/#{filename}", 'w') do |file|
+    File.open("saves/#{filename}", 'w') do |file|
       file.puts to_json
     end
   end
@@ -241,7 +241,7 @@ class ChessGame
   end
 
   def from_json(filename)
-    data = JSON.load(File.read("../saves/#{filename}"))
+    data = JSON.load(File.read("saves/#{filename}"))
     @board.arrange_pieces_from_fen(data['board'])
     @player1 = data['player1']
     @player2 = data['player2']
@@ -267,9 +267,9 @@ class ChessGame
   end
 
   def get_filelist
-    Dir.mkdir('../saves') unless Dir.exist?('../saves')
+    Dir.mkdir('saves') unless Dir.exist?('saves')
 
-    Dir.children('../saves').first(5)
+    Dir.children('saves').first(5)
   end
 
   def choose_save_prompt
