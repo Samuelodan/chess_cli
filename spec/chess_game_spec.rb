@@ -60,6 +60,10 @@ RSpec.describe ChessGame do
   end
 
   describe '#valid_move_input?' do
+    before do
+      chess_game.instance_variable_set(:@current_color, :black)
+    end
+
     context 'when input is valid' do
       before do
         pc = Pawn.new(letter: 'p')
@@ -69,7 +73,7 @@ RSpec.describe ChessGame do
         allow(player1).to receive(:color).and_return(:black)
       end
 
-      xit 'returns true' do
+      it 'returns true' do
         mock_input = 'a4a5'
         result = chess_game.valid_move_input?(mock_input)
         expect(result).to be true
@@ -112,7 +116,7 @@ RSpec.describe ChessGame do
           allow(player1).to receive(:color).and_return(:black)
         end
 
-        xit 'returns false' do
+        it 'returns false' do
           mock_input = 'a4a5'
           result = chess_game.valid_move_input?(mock_input)
           expect(result).to be false
