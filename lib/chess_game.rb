@@ -216,6 +216,16 @@ class ChessGame
     end
   end
 
+  def get_save_choice
+    display_save_list
+    loop do
+      input = gets.chomp
+      break input unless valid_save_choice?(input)
+
+      error_message_for(:save_choice)
+    end
+  end
+
   def display_save_list
     choose_save_prompt
     Dir.children('../saves').first(5).each_with_index do |filename, idx|
