@@ -20,6 +20,7 @@ class ChessGame
     @player2 = player2
     @current_color = :white
     @quit = false
+    @skip_load = false
   end
 
   def current_player

@@ -34,6 +34,8 @@ module SaveLoad
 
   def load_save
     file_number = get_save_choice.to_i - 1
+    return if @skip_load
+
     filename = get_filelist[file_number]
     from_json(filename)
     play
@@ -52,6 +54,8 @@ module SaveLoad
 
   def get_save_choice
     display_save_list
+    return if @skip_load
+
     loop do
       input = gets.chomp
       break input if valid_save_choice?(input)
@@ -82,6 +86,7 @@ module SaveLoad
 
     HEREDOC
     sleep(1)
+    @skip_load = true
     start_new_game
   end
 
