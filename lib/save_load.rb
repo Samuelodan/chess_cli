@@ -57,6 +57,7 @@ module SaveLoad
     return if @skip_load
 
     loop do
+      print '  >> '
       input = gets.chomp
       break input if valid_save_choice?(input)
 
@@ -77,6 +78,7 @@ module SaveLoad
     get_filelist.first(5).each_with_index do |filename, idx|
       puts "  [#{idx + 1}]  #{filename}"
     end
+    puts
   end
 
   def abort_load
