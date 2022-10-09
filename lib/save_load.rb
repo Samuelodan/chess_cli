@@ -91,7 +91,8 @@ module SaveLoad
   end
 
   def valid_save_choice?(input)
-    ['1', '2', '3', '4', '5'].include?(input)
+    fl_count = get_filelist.length.to_s
+    ('1'..fl_count).include?(input)
   end
 end
 
