@@ -13,7 +13,7 @@ module Display
     promo_letter: "Please enter a valid piece letter",
     menu_input: "Please enter a valid item number",
     replay_input: 'Please enter either 1 or 2 to choose',
-    save_choice: 'Please enter a number between 1 and 5'
+    save_choice: "Please enter a number from the list"
   }.freeze
 
   def error_message_for(error_name)
