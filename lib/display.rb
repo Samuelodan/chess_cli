@@ -104,7 +104,7 @@ module Display
 
   def prompt_move
     puts <<-HEREDOC
-    [enter 'save' to save game, or 'quit' to surrender]
+  [enter 'save' to save game, or 'quit' to surrender]
 
   #{current_player.pretty_name}, move your piece by entering the positions
   like so, 'c4e6' without the quotes
@@ -114,8 +114,8 @@ module Display
 
   def promotion_prompt
     puts <<-HEREDOC
-  It's time to promote your Pawn. Enter any one of the options below
-  without the brackets.
+  It's time to promote your Pawn. Enter any one of
+  the options below without the brackets.
 
   [q] to promote to Queen
   [r] for Rook
