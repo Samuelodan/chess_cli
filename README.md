@@ -1,4 +1,4 @@
-# RUBY CHESS
+# CLI Chess
 
 ![Screenshot of Board](https://github.com/Samuelodan/chess_cli/blob/main/media/main_img.png)
 
@@ -13,9 +13,10 @@ Written in Ruby for the command line.
 - [How to Play](#How-to-play)
 - [Features](#Features)
   - [Special Moves](#Special-moves)
-- [Reflection and Personal Lessons](#Reflection-and-personal-lessons)
+- [Reflection and Personal Lessons](#Reflection-and-Personal-Lessons)
 - [Potential Improvements](#Potential-improvements)
 - [Acknowledgement](#Acknowledgement)
+- [Contact](#Contact)
 
 
 ## Description
@@ -55,10 +56,11 @@ positions from a1 to h8 (`a` to `h` and `1` to `8`). So, `a2a4` means "move the 
 
 During gameplay, you can enter `save` to save your progress. This save can be
 loaded at the start of the program.
-> insert image or GIF here
+
+![load_screen](https://github.com/Samuelodan/chess_cli/blob/main/media/load_save_img.png)
 
 As shown above, you can load from any of 5 saves and you'll resume right where
-you saved.
+you left.
 
 ### Resign at any Point of the Game
 
@@ -102,11 +104,86 @@ Pawns that have not yet moved in the game can make double moves.
 
 ## Reflections and Personal Lessons
 
+I remember being very scared at the start of this project, cos I wasn't sure how
+I would implement many features. Even displaying the colorful board in
+the terminal seemed impossible. But I learnt that by just starting with the
+easiest tasks, all the others fell into place gradually. Chess should not be
+seen as one gigantic project, but as a combination of many small projects.
+
+I had the opportunity to use 16 bit ANSI colors for the first time, a
+self-registering factory design pattern for creating the pieces, inheritance on
+a large scale, and many other small things I hadn't put to use before.
+
+## Potential Improvements
+
+### UI Showing Possible Moves
+
+I'd like to add the option of selecting any piece and seeing all it's possible
+moves show up on the board. It'll look clunky for sure, but my hope is that
+it'll serve as training wheels for people newer to chess until they feel more
+confident about where every piece can go.
+
+### Overriding Save Files Upon Load
+
+I want to make it so that you can't save multiple instances of the same match.
+Once a save file is loaded, it'll be deleted and the players will have the
+option to save again if they wish to return to it.
+
+### Basic AI that Players Can Play Against
+
+Right now, you have to be two players to enjoy the game, but it'd be fun to be
+able to play against the computer.
+
+### Castling and En Passant
+
+I ommited these features mostly because of a time constraint. Not many beginners
+seek out these moves, but anyone who has taken chess seriously in the past will
+expect to be able to make, at least, one of these moves, so I'll try to add them
+in the future.
+
+### More Robust Test Coverage
+
+Right now, all the core mechanisms of the piece movement, win and draw states,
+pawn promotion, and several others are well covered, as I've written about 200
+unit tests. But the Game class which brings everything together and determines
+the game flow and user interaction is poorly tested. While I don't know how to
+write more integration type tests, there are still message expectation tests
+that I can make, so I'll try to cover as much as I reasonably can with unit
+tests.
+
+### Give Option to Start Game from FEN String
+
+Right now, I only use FEN strings to set up the board for tests (more on that in the
+acknowledgments), but I would like to let players start their own games from
+FEN. I'll likely wait to have the other special moves first since FEN holds
+valuable information about them.
+
+## Acknowledgement
+
+#### [The Odin Poject](https://www.theodinproject.com/)
+I want to thank The Odin Project for providing
+me with the resources to learn most what I know about actual programming. I wouldn't have had
+anything to do with Ruby if not for them. Their Discord community has also
+provided me with the much needed support in my coding journey thus far. 
+
+This project is the final project in their pure Ruby course. It's supposed to
+be a culmination of everything I've learned about Ruby until now and I must say,
+I feel a lot more competent as a developer after having built chess.
+
+#### Lichess.org
+
+By using Lichess's [Board Editor](https://lichess.org/editor), I was able to
+easily set up chess scenarios, grab the FEN string for said scenaraio, and
+import into my game to recreate the board and set test expectations. My game may
+not look it, but it can load up any FEN string internally, and arrange the board
+accordingly.
+
+## Contact
+
+Please feel free to reach out if you have any questions or suggestions.
+
+Thanks for reading.
 
 
-
-
-
-<!-- To check out the game, head over to <a href = "https://replit.com/@Samuelodan/chesscli#README.md">replit</a> and click the Run button to start. -->
 
 
