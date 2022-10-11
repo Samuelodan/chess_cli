@@ -1,6 +1,6 @@
 # RUBY CHESS
 
-> main image goes here
+![Screenshot of Board](https://github.com/Samuelodan/chess_cli/blob/main/media/main_img.png)
 
 
 Written in Ruby for the command line.
@@ -89,6 +89,12 @@ announce check.
 #### Pawn Promotion
 
 > Insert GIF or Image here
+
+
+According to the rules of chess, pawns that get to the other side must be
+promoted to either a Queen (this is called Queening), or Rook, Knight, or Bishop
+(this is referred to as Underpromotion). The same rule is enforced in this Game
+as well.
 
 #### Pawn Double Move
 
