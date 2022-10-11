@@ -166,8 +166,8 @@ valuable information about them.
 
 #### [The Odin Poject](https://www.theodinproject.com/)
 I want to thank The Odin Project for providing
-me with the resources to learn most what I know about actual programming. I wouldn't have had
-anything to do with Ruby if not for them. Their Discord community has also
+me with the resources to learn most of what I know about actual programming. I wouldn't have had
+anything to do with the beautiful Ruby language if it wasn't for them. Their Discord community has also
 provided me with the much needed support in my coding journey thus far. 
 
 This project is the final project in their pure Ruby course. It's supposed to
