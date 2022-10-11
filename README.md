@@ -13,7 +13,7 @@ Written in Ruby for the command line.
 - [How to Play](#How-to-play)
 - [Features](#Features)
   - [Special Moves](#Special-moves)
-- [Reflection and Personal Lessons](#Reflection-and-Personal-Lessons)
+- [Reflection and Personal Lessons](#Reflection-and-personal-lessons)
 - [Potential Improvements](#Potential-improvements)
 - [Acknowledgement](#Acknowledgement)
 - [Contact](#Contact)
