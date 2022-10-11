@@ -31,9 +31,13 @@ The more convenient way to run this program is by visiting this [Replit page](ht
 If you want to run it locally though, you can clone the repo, go to the
 project's root directory using `cd chess_cli/` and run these commands;
 
+> You should have Ruby version 2.7 (and above) installed to run this program properly, though,
+> 2.5 might work fine.
+
 `bundle install` to install the project's dependencies and then
 
 `ruby lib/main.rb` to run the program.
+
 
 ### Running the Tests
 run `rspec` to run all tests or,
