@@ -20,11 +20,11 @@ Written in Ruby for the command line.
 
 ## Description
 
-This is a 2-player chess game that runs in the command line. Players take turn to move their pieces until there's a checkmate or stalemate, or until a player resigns mid game.
+This is a 2-player chess game that runs in the command line. Players take turns to move their pieces until there's a checkmate or stalemate, or until a player resigns mid game.
 
 ## Installation
 
-The more convenient way to run this program is by visiting this [Replit page]("https://replit.com/@Samuelodan/chesscli#README.md") and clicking the
+The more convenient way to run this program is by visiting this [Replit page](https://replit.com/@Samuelodan/chesscli#README.md) and clicking the
 **run** button to start the game.
 
 If you want to run it locally though, you can clone the repo, go to the
@@ -51,7 +51,7 @@ positions from a1 to h8 (`a` to `h` and `1` to `8`). So, `a2a4` means "move the 
 
 ## Features
 
-#### Save and Load Game Progress
+### Save and Load Game Progress
 
 During gameplay, you can enter `save` to save your progress. This save can be
 loaded at the start of the program.
@@ -60,24 +60,24 @@ loaded at the start of the program.
 As shown above, you can load from any of 5 saves and you'll resume right where
 you saved.
 
-#### Resign at any Point of the Game
+### Resign at any Point of the Game
 
 Instead of entering your move, you can enter `quit` to surrender and end the
 game. There's also an option at the end of each match to immediatly play another round.
 
-#### Error prompts
+### Error prompts
 
 There are prompts throughout the game to guide you to the right output. If you
 tried to make an invalid move, there's a prompt to notify you. If you try to
 move your opponent's piece, there's a specific prompt telling you. There're also prompts to tell you when you have't selected a piece or when you try to make a move that places or leaves your king in check.
 
-#### Different Color Name Backgrounds
+### Different Color Name Backgrounds
 
 These colors help players to more easily recognise when it's their turn to make
 moves. The white player has the lighter background color to their name.
 
 
-#### Win and Draw States
+### Win and Draw States
 
 Checkmate and Stalemate have been implemented, so the game will display a prompt
 and then end when the conditions are met. The there's also a prompt whenever a
@@ -86,7 +86,7 @@ announce check.
 
 ## Special Moves
 
-#### Pawn Promotion
+### Pawn Promotion
 
 ![pawn
 promotion](https://github.com/Samuelodan/chess_cli/blob/main/media/promotion_img.png)
@@ -96,7 +96,7 @@ promoted to either a Queen (this is called Queening), or Rook, Knight, or Bishop
 (this is referred to as Underpromotion). The same rule is enforced in this Game
 as well.
 
-#### Pawn Double Move
+### Pawn Double Move
 
 Pawns that have not yet moved in the game can make double moves.
 
