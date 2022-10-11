@@ -13,7 +13,7 @@ Written in Ruby for the command line.
 - [How to Play](#How-to-play)
 - [Features](#Features)
   - [Special Moves](#Special-moves)
-- [Reflection and Personal Lessons](#Reflection-and-personal-lessons)
+- [Reflections and Personal Lessons](#Reflections-and-personal-lessons)
 - [Potential Improvements](#Potential-improvements)
 - [Acknowledgement](#Acknowledgement)
 - [Contact](#Contact)
@@ -111,7 +111,7 @@ Pawns that have not yet moved in the game can make double moves.
 I remember being very scared at the start of this project, cos I wasn't sure how
 I would implement many features. Even displaying the colorful board in
 the terminal seemed impossible. But I learnt that by just starting with the
-easiest tasks, all the others fell into place gradually. Chess should not be
+easiest tasks, all the others will into place gradually. As someone I know said, Chess should not be
 seen as one gigantic project, but as a combination of many small projects.
 
 I had the opportunity to use 16 bit ANSI colors for the first time, a
