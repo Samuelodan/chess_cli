@@ -88,8 +88,8 @@ announce check.
 
 #### Pawn Promotion
 
-> Insert GIF or Image here
-
+![pawn
+promotion](https://github.com/Samuelodan/chess_cli/blob/main/media/promotion_img.png)
 
 According to the rules of chess, pawns that get to the other side must be
 promoted to either a Queen (this is called Queening), or Rook, Knight, or Bishop
