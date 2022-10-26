@@ -114,7 +114,7 @@ the terminal seemed impossible. But I learnt that by just starting with the
 easiest tasks, all the others will into place gradually. As someone I know said, Chess should not be
 seen as one gigantic project, but as a combination of many small projects.
 
-I had the opportunity to use 16 bit ANSI colors for the first time, a
+I had the opportunity to use 24 bit ANSI colors for the first time, a
 self-registering factory design pattern for creating the pieces, inheritance on
 a large scale, and many other small things I hadn't put to use before.
 
